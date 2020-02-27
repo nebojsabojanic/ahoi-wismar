@@ -1,0 +1,222 @@
+@mixin vertical-hr($value) {
+
+  -ms-transform:rotate($value); /* IE9 */
+  -moz-transform: rotate($value);  /* FF3.5/3.6 */
+  -o-transform: rotate($value);  /* Opera 10.5 */
+  -webkit-transform: rotate($value);  /* Saf3.1+ */
+  transform: rotate($value);  /* Newer browsers */
+
+
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+@mixin trans($val) {
+  -webkit-transition: $val;
+  -moz-transition: $val; 
+  -o-transition: $val; 
+  transition: $val; 
+}
+
+
+
+@mixin font-antialiasing {
+
+ -moz-font-smoothing: antialiased;
+ -o-font-smoothing: antialiased;
+ font-smoothing: antialiased;
+ text-rendering: optimizeLegibility;
+
+} 
+
+@mixin backface-visibility($arguments) {
+  -webkit-backface-visibility: $arguments;
+     -moz-backface-visibility: $arguments;
+      -ms-backface-visibility: $arguments;
+       -o-backface-visibility: $arguments;
+          backface-visibility: $arguments;
+}
+
+@mixin  webkit-appearance {
+        
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+@mixin webkit-user-select  {
+
+	-webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+
+    }
+
+@mixin center-block {
+  
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+}
+
+@mixin translate($x, $y, $z) {
+
+-webkit-transform:translate3d($x, $y, $z);
+  -moz-transform:translate3d($x, $y, $z);
+  -ms-transform:translate3d($x, $y, $z);
+  -o-transform:translate3d($x, $y, $z);
+  transform:translate3d($x, $y, $z);
+}
+
+@mixin rotate($x) {
+  -webkit-transform: rotate($x);
+  -moz-transform: rotate($x);
+  -o-transform: rotate($x);
+  transform: rotate($x);
+}
+
+
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// Requires inline-block or block for proper styling
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin reset-li($indent) {
+
+  list-style-position: inside;
+  text-indent:$indent;
+
+}
+
+@mixin letter-spacing($space) {
+
+letter-spacing: $space;
+
+}
+
+@mixin box-shadow-cross($box-shadow,$box-shadow2) {
+
+      -webkit-box-shadow:$box-shadow,$box-shadow2;
+      -moz-box-shadow:$box-shadow,$box-shadow2;
+      box-shadow:$box-shadow,$box-shadow2;
+    }
+
+
+@mixin box-shadow ($level) {
+
+    @if $level == 1 {
+      @include box-shadow-cross(0 1px 0px rgba(2, 2, 2, 0), 0 0px 6px rgba(2, 2, 2, 0.12));
+    
+    } @else if $level == 2 {
+        box-shadow: 0 3px 6px rgba(2,2,2,0.16), 0 3px 6px rgba(2,2,2,0.23);
+    } @else if $level == 3 {
+        box-shadow: 0 10px 20px rgba(2,2,2,0.19), 0 6px 6px rgba(2,2,2,0.23);
+    } @else if $level == 4 {
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    } @else if $level == 5 {
+        box-shadow: 0 19px 38px rgba(2,2,2,0.30), 0 15px 12px rgba(2,2,2,0.22);
+    }
+    @else if $level == 6 {
+      box-shadow:0 2px 1rem rgba(0, 0, 0, 0.08);
+     }
+      @else if $level == 7 {
+        box-shadow:0 0 1rem rgba(0, 0, 0, 0.1);
+    }
+    // main pages listing shadow 
+    @else if $level == 8 {
+      box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  }
+    
+   
+    
+
+}
+
+@mixin fls-button-theme($btn-color) {
+
+  background-color: $btn-color;
+  &:hover {
+    background-color: darken($btn-color, 10%);
+    
+  }
+
+}
+
+// Gradient
+@mixin gradient($direction, $list) { 
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);  
+}
+
+
+//Responsive Mixins
+
+$mobile-width:  600px;
+$tablet-width:  768px;
+$laptop-width:  990px;
+$medium-desktop-width: 1160px;
+$desktop-width: 1366px;
+$desktop-full: 1600px;
+
+$phablet: 680px;
+
+@mixin desktopFull {
+  @media screen and (max-width:$desktop-full) {
+    @content;
+  }
+}
+
+@mixin phablet {
+  @media screen and (max-width:$phablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width:$desktop-width) {
+    @content;
+  }
+}
+
+
+@mixin mediumDesktop {
+  @media screen and (max-width: $medium-desktop-width) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: $laptop-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+

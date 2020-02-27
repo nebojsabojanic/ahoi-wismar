@@ -1,0 +1,93 @@
+Grunt libraries, installation and guides...
+
+To setup GruntJS build here is the steps:
+
+    1. Make sure you have setup your package.json or setup new one: npm init.
+    2. Install Grunt CLI as global: npm install -g grunt-cli.
+    3. Install Grunt in your local project: npm install grunt --save-dev.
+    4. Install any Grunt Module you may need in your build process.
+
+npm install grunt-node-sass --save-dev
+npm install imagemin-mozjpeg
+npm install grunt-contrib-cssmin --save-dev
+npm install grunt-contrib-uglify --save-dev
+npm install --save-dev grunt-contrib-imagemin
+npm install grunt-contrib-concat --save-dev
+
+
+CONCAT
+
+Getting Started
+
+If you haven't used Grunt before, be sure to check out the Getting Started guide ( https://gruntjs.com/getting-started ), as it explains how to create a Gruntfile as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+
+	npm install grunt-contrib-concat --save-dev
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+	grunt.loadNpmTasks('grunt-contrib-concat');
+
+
+
+
+UGLIFY
+
+Getting Started
+
+If you haven't used Grunt before, be sure to check out the Getting Started guide, as it explains how to create a Gruntfile as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+
+	npm install grunt-contrib-uglify --save-dev
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+
+
+
+
+CSSMIN
+
+Getting Started
+
+If you haven't used Grunt before, be sure to check out the Getting Started guide, as it explains how to create a Gruntfile as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+
+	npm install grunt-contrib-cssmin --save-dev
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+
+
+
+IMAGEMIN
+
+Installing library with command:
+
+	npm install --save-dev grunt-contrib-imagemin
+	&
+	npm install imagemin-mozjpeg
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+	
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
+
+
+
+
+NODE SASS
+
+Installing library with command:
+
+	npm install grunt-node-sass --save-dev
+
+Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+
+	grunt.loadNpmTasks('grunt-node-sass');
+
+
+
+
+
+
+

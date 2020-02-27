@@ -1,0 +1,11 @@
+@charset "utf-8";
+//import global variables
+@import "sass/_variables";
+
+// import your directories
+@import "sass/_mixins";
+@import "sass/_framework";
+@import "sass/_pages";
+@import "sass/_navigation";
+
+@import "sass/_responsive";
