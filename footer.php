@@ -1,50 +1,51 @@
-<!-- =============================================================================
-                           PAGE STRUCTURE:= start footer
-=============================================================================- -->
-   <footer>
-		<?php 
-			// get logo footer
-			$logoFooter = get_field( 'footer-logo', 'option');
-			
-			// get footer description
-			$footerDescription = get_field('footer-description','option');
-		?>
+<?php 
+	$phone 		= get_sub_field('phone_number', 'option');
+	$email 		= get_sub_field('email', 'option');
+	$address 	= get_sub_field('address', 'option');
+	$footerLogo	= get_sub_field('footer_logo', 'option');
+	$copyright 	= get_sub_field('copyright', 'option');
+?>
 
-		<a href="<?php echo get_home_url(); ?>"><img title="<?php echo $logoFooter['title'];?>" data-src="<?php echo $logoFooter['url'];?>" alt="<?php echo $logoFooter['alt'];?>" src="<?php echo $logoFooter['url'];?>"></a>
-		<div class="footer__copy"><?php echo $footerDescription;?></div>
+	<footer class="footer">
+
+		<div class="contact-info">
+			<a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a>
+			<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+		</div>
+
+		<div class="address-info">
+			<p><?php echo $address; ?></p>
+		</div>		
+
+		<figure class="logo logo--footer">
+			<a href="<?php echo home_url(); ?>">
+				<img src="<?php echo $footerLogo['url']; ?>" alt="<?php echo $footerLogo['alt']; ?>">
+			</a>
+		</figure>
+
+		<small class="footer__copyright"><?php echo $copyright; ?></small>
+
+		<div class="footer__menu">
+			<ul class="footer__menu-list">
+				<li class="footer__menu-item">
+					<a href="">Impressum</a>
+				</li>
+
+				<li class="footer__menu-item">
+					<a href="">Datenschutzerklärung</a>
+				</li>
+			</ul>
+		</div>
 
 	</footer>
-	
-	<!-- =============================================================================
-                           PAGE STRUCTURE:= end footer
-    =============================================================================- -->
+<!-- =======================================================================
+               PAGE STRUCTURE:= end footer
+======================================================================= -->
+
+
+
 	<script async src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
-	<script type="text/javascript">
-		WebFontConfig = {
-			google: { families: [ 'Montserrat|Hind:300,400,500,400i,,600' ] }
-		};
 
-		(function() {
-			var wf = document.createElement('script');
-			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-			wf.type = 'text/javascript';
-			wf.async = 'true';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(wf, s);
-		})();
-	</script>
-
-
-	<div class="go-top">
-                
-				<div class="arrow-up">
-	
-				<span class="left-arm"></span>
-				<span class="right-arm"></span>
-	
-				</div>
-			
-			</div>
 
 
 <?php wp_footer();?>	

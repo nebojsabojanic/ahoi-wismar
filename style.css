@@ -141,10 +141,6 @@ ol {
   line-height: 1.8;
   margin-bottom: 3rem; }
 
-.paragraph--big {
-  font-size: 2rem;
-  font-family: 'Montserrat', sans-serif; }
-
 .unordered-list {
   list-style-type: none;
   margin-top: 0.5rem;
@@ -169,34 +165,6 @@ ol {
       margin-left: 2rem; }
       .unordered-list .unordered-list__item.item--basic::before {
         background-color: #333333; }
-
-.button {
-  display: inline-block; }
-  .button a {
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-    color: #FFFFFF;
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: 0.112rem;
-    line-height: 1.2;
-    padding: 2rem 4rem;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none; }
-  .button--blue a {
-    background-color: #326590; }
-  .button--green a {
-    background-color: #98CB55; }
-  .button--white a {
-    background-color: #FFFFFF;
-    color: #326590; }
-  .button--header-phone {
-    margin-right: 10rem; }
 
 @media screen and (max-width: 1366px) {
   html {
@@ -229,7 +197,8 @@ ol {
 .grid-960,
 .grid-1160,
 .grid-1280,
-.grid-1400 {
+.grid-1340,
+.grid-1440 {
   position: relative; }
 
 /** GLOBAL GRID SIZES **/
@@ -317,8 +286,14 @@ ol {
   margin-right: auto;
   width: 90%; }
 
-.grid-1400 {
-  max-width: 1400px;
+.grid-1340 {
+  max-width: 1340px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; }
+
+.grid-1440 {
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
@@ -374,9 +349,13 @@ ol {
 .mt-6r {
   margin-top: 6rem; }
 
+.pad-l-10 {
+  padding-left: 10rem; }
+
 /*------------------------------------------------------------------
 [Table of contents]
 
+0. General
 1. Header
 2. Page Home
   2.1 Section 1
@@ -385,303 +364,107 @@ ol {
   2.4 Section 4
   2.5 Section 5
   2.6 Section 6
-  2.7 Section 7
 3. Alt Pages
-4. Footer
+4. 404 page
+5. Footer
 
     
 
 -------------------------------------------------------------------*/
 /*=============================================
+=           0. General                    =
+=============================================*/
+.graphics {
+  position: absolute; }
+  .graphics--header {
+    left: 0;
+    top: 0;
+    z-index: -1; }
+
+.waves {
+  position: absolute; }
+  .waves--header {
+    right: 12.1rem;
+    top: 36.7rem;
+    z-index: 2; }
+
+/*=============================================
 =           1. Header                    =
 =============================================*/
 .header--alt {
-  margin-bottom: 7rem; }
-  .header--alt .logo {
-    padding-right: 0;
-    text-align: center; }
-    .header--alt .logo img {
-      max-width: 50%; }
+  color: red; }
 .header__content {
-  margin-bottom: 4rem;
-  margin-top: 2rem; }
-.header__cover {
-  width: 100%; }
-  .header__cover img {
-    width: 100%; }
-  .header__cover--mobile {
-    display: none; }
+  padding-bottom: 3.5rem;
+  padding-top: 3.5rem; }
+.header__image {
+  position: relative; }
+  .header__image .header__image-caption {
+    position: absolute;
+    left: 0;
+    top: 8rem; }
 
-/* Alt pages header style */
-.message {
-  background-color: #326590;
-  margin-bottom: 3.5rem;
-  padding: 1.5rem 3rem;
-  text-align: center; }
-  .message__paragraph {
-    color: #FFFFFF;
-    font-size: 2.4rem;
-    letter-spacing: 0.12rem;
-    line-height: 1.2; }
+.logo {
+  max-width: 90%; }
+  .logo--header {
+    margin-bottom: 2.5rem;
+    text-align: center; }
+  .logo--footer {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0; }
 
-.breadcrumbs {
-  border-bottom: 0.2rem dotted #98CB55;
-  border-top: 0.2rem dotted #98CB55;
-  padding: 3.2rem 0; }
-  .breadcrumbs a {
-    color: #326590;
-    display: inline;
-    font-size: 1.6rem; }
-  .breadcrumbs p {
-    color: #326590;
-    display: inline;
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-left: 2rem;
-    padding-left: 3rem;
-    position: relative; }
-    .breadcrumbs p::before {
-      content: "";
-      background-color: #98CB55;
-      border-radius: 50%;
-      height: 1rem;
-      left: 0;
-      position: absolute;
-      top: 0.5rem;
-      width: 1rem; }
+.breadcrumbs a {
+  color: #326590;
+  display: inline;
+  font-size: 1.6rem; }
+.breadcrumbs p {
+  color: #326590;
+  display: inline;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-left: 2rem;
+  padding-left: 3rem;
+  position: relative; }
+  .breadcrumbs p::before {
+    content: "";
+    background-color: #98CB55;
+    border-radius: 50%;
+    height: 1rem;
+    left: 0;
+    position: absolute;
+    top: 0.5rem;
+    width: 1rem; }
 
 /*=============================================
 =           2. Page Home                    =
 =============================================*/
 .section {
-  padding-bottom: 13rem;
-  padding-top: 13rem;
   position: relative; }
 
-.section-bg-sky-blue {
-  background-color: #EEF7FF; }
-
-.section-bg-light-blue {
-  background-color: #CCE0F2; }
-
-.section--blue-gradient {
-  background: -webkit-linear-gradient(left, #163148, #2C6290);
-  background: -moz-linear-gradient(left, #163148, #2C6290);
-  background: -o-linear-gradient(left, #163148, #2C6290);
-  background: linear-gradient(left, #163148, #2C6290); }
-
-.graphics {
-  z-index: 0; }
-
-@media screen and (max-width: 1366px) {
-  .section {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem; }
-
-  .graphics img {
-    width: 70%; } }
 /*=============================================
 =           2.1 Section 1                    =
 =============================================*/
-.logo {
-  z-index: 2;
-  padding-right: 13rem; }
-
-.section1 .graphics {
-  margin-top: -4rem; }
-
-.location .fas {
-  color: #98CB55;
-  letter-spacing: 0.21rem;
-  line-height: 1.7;
-  font-size: 3rem; }
-.location .location__pin .unordered-list__item {
-  font-size: 2rem; }
-  .location .location__pin .unordered-list__item::before {
-    content: none; }
-  .location .location__pin .unordered-list__item a {
-    color: #333333; }
-
 /*=============================================
 =           2.2 Section 2                    =
 =============================================*/
-.graphics--section2 {
-  left: 0;
-  margin: auto;
-  position: absolute; }
-
-.section2 {
-  color: #FFFFFF; }
-  .section2 .button {
-    margin-top: 3.8rem; }
-
 /*=============================================
 =           2.3 Section 3                    =
 =============================================*/
-.graphics--section3 {
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  position: absolute;
-  top: 0; }
-
-.graphics--section3-2 {
-  bottom: -0.3rem;
-  left: 26.2rem;
-  margin: auto;
-  position: absolute; }
-
-@media screen and (max-width: 1366px) {
-  .graphics--section3 {
-    text-align: right; } }
 /*=============================================
 =           2.4 Section 4                    =
 =============================================*/
-.section4 .title__subtitle {
-  padding-left: 2.5rem; }
-  .section4 .title__subtitle::before {
-    background-color: #FFFFFF;
-    height: 1.5rem;
-    top: 0.4rem;
-    width: 1.5rem; }
-
 /*=============================================
 =           2.5 Section 5                    =
 =============================================*/
-.presentation-photos {
-  margin: 13rem auto 1rem;
-  max-width: 100%;
-  width: 75%; }
-  .presentation-photos figure {
-    text-align: center; }
-    .presentation-photos figure img {
-      width: 100%; }
-    .presentation-photos figure figcaption {
-      color: #326590;
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.07rem;
-      margin-top: 30px;
-      text-transform: uppercase; }
-
 /*=============================================
 =           2.6 Section 6                    =
 =============================================*/
-.contact-phone {
-  font-size: 4rem;
-  font-weight: bold;
-  letter-spacing: 0.28rem; }
-  .contact-phone i {
-    color: #5FA9E8; }
-
-/*=============================================
-=           2.7 Section 7                    =
-=============================================*/
-.section7-wrap {
-  padding-bottom: 4.7rem; }
-
-.graphics--section7 {
-  position: absolute;
-  right: 0;
-  top: 0; }
-
-.section7 .button {
-  margin: 0 auto; }
-
-.prices {
-  margin-bottom: 5rem; }
-  .prices__block {
-    border-radius: 2rem;
-    -webkit-border-radius: 2rem;
-    -moz-border-radius: 2rem;
-    -ms-border-radius: 2rem;
-    -o-border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 3rem;
-    width: calc(33.33333% - 2rem); }
-    .prices__block.active .prices__top {
-      background-color: #5FA9E8; }
-  .prices__top {
-    background-color: #98CB55;
-    border-radius: 2rem 2rem 0 0;
-    -webkit-border-radius: 2rem 2rem 0 0;
-    -moz-border-radius: 2rem 2rem 0 0;
-    -ms-border-radius: 2rem 2rem 0 0;
-    -o-border-radius: 2rem 2rem 0 0;
-    color: #FFFFFF;
-    padding: 2.5rem 4rem; }
-    .prices__top .prices__price {
-      font-size: 5rem;
-      font-weight: 600;
-      letter-spacing: 0.42rem;
-      line-height: 1.2;
-      margin: 0; }
-      .prices__top .prices__price span {
-        display: block;
-        font-size: 1.6rem;
-        letter-spacing: 0.112rem;
-        text-transform: uppercase; }
-  .prices__bottom {
-    background-color: #FFFFFF;
-    border-radius: 0 0 2rem 2rem;
-    -webkit-border-radius: 0 0 2rem 2rem;
-    -moz-border-radius: 0 0 2rem 2rem;
-    -ms-border-radius: 0 0 2rem 2rem;
-    -o-border-radius: 0 0 2rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 12rem;
-    padding: 1rem 3rem; }
-    .prices__bottom .unordered-list {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left; }
-      .prices__bottom .unordered-list .unordered-list__item {
-        font-size: 1.6rem; }
-        .prices__bottom .unordered-list .unordered-list__item::before {
-          top: 1rem; }
-
-@media screen and (max-width: 1366px) {
-  .graphics--section7 {
-    text-align: right; } }
 /*=============================================
 =           3. Alt Pages                    =
 =============================================*/
-.alt-page .title .title__subtitle {
-  padding-left: 4rem; }
-  .alt-page .title .title__subtitle::before {
-    height: 1.6rem;
-    top: 0.2rem;
-    width: 1.6rem; }
-.alt-page .title h2 {
-  margin-top: 3rem; }
-
-.law {
-  margin: 5rem auto 8rem; }
-  .law ol > li {
-    margin-bottom: 5rem; }
-  .law__title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding-left: 3rem; }
-  .law__content {
-    font-size: 1.6rem; }
-    .law__content h3 {
-      margin-bottom: 5rem;
-      text-transform: uppercase; }
-    .law__content a {
-      color: #98CB55; }
-    .law__content p {
-      margin-bottom: 1rem; }
-    .law__content--datenschutz p {
-      margin-bottom: 4rem; }
-
 /*=============================================
-=           4. Footer                    =
+=           4. 404 page                    =
 =============================================*/
 .page-404 .title {
   margin-bottom: 3rem;
@@ -706,32 +489,25 @@ ol {
   padding: 0; }
 
 /*=============================================
-=           4. Footer                    =
+=           5. Footer                    =
 =============================================*/
 .footer {
   position: relative; }
-  .footer--home {
-    background-color: #CCE0F2; }
-  .footer .footer__bg {
+  .footer__bg {
     margin-bottom: -2px;
     position: relative;
     width: 100%;
     z-index: 1; }
-    .footer .footer__bg--tablet {
-      display: none; }
-    .footer .footer__bg--mobile {
-      display: none; }
-  .footer .footer__content {
+  .footer__content {
     bottom: 5.6rem;
     left: 0;
     position: absolute;
     right: 0;
     z-index: 2; }
-
-.footer__copyrights p {
-  color: #EEF7FF;
-  font-size: 1.2rem;
-  letter-spacing: 0.07rem; }
+  .footer__copyright p {
+    color: #EEF7FF;
+    font-size: 1.2rem;
+    letter-spacing: 0.07rem; }
 
 /*=============================================
 =            Section top header             =

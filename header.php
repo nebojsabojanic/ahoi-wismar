@@ -68,18 +68,18 @@
 
 
 
-		<div class="header__content pad-l-10">
+		<div class="header__content grid-1340">
 			
 			<figure class="logo logo--header">
-				<a href="">
+				<a href="<?php echo home_url(); ?>">
 					<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 				</a>
 			</figure>
 
 
-			<figure class="header__image">
+			<figure class="header__image pad-l-10">
 				<img src="<?php echo $headerBg['url']; ?>">
-				<figcaption><?php echo $headerTitle; ?></figcaption>
+				<figcaption class="header__image-caption"><?php echo $headerTitle; ?></figcaption>
 			</figure>
 
 		</div><!-- End: header__content -->

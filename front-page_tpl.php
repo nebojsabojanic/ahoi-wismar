@@ -29,7 +29,7 @@ get_header();
 			$section1 = get_field('section_1');
 
 			if( $section1 ): ?>
-				<div class="d-flex d-jcsb pad-l-10">
+				<div class="grid-1340 d-flex d-jcsb pad-l-10">
 					<div class="grid-60">
 						<?php echo $section1['paragraph']; ?>
 					</div>
@@ -55,7 +55,7 @@ get_header();
 				while ( have_rows('section_2') ) :
 				the_row(); ?>
 
-				<div>
+				<div class="grid-1340">
 					<div class="grid-60">
 						<h3><?php echo $section2['title']; ?></h3>
 						<?php echo $section2['paragraph']; ?>
@@ -203,7 +203,7 @@ get_header();
 								<div class="room__single">
 									<div class="room__description">
 										<h3><?php echo get_sub_field('title'); ?></h3>
-										<p><?php echo get_sub_field('description'); ?></p>
+										<p class="paragraph"><?php echo get_sub_field('description'); ?></p>
 									</div>
 
 									<div class="room__design">
