@@ -23,14 +23,14 @@ get_header();
 	<main class="page-content">
 
 
-		<section class="section section--1">
+		<section class="section section--1 section--pad">
 
 			<?php
 			$section1 = get_field('section_1');
 
 			if( $section1 ): ?>
-				<div class="grid-1340 d-flex d-jcsb pad-l-10">
-					<div class="grid-60">
+				<div class="grid-1340 d-flex d-jcsb d-aic">
+					<div class="section__paragraph grid-60 pad-l-10">
 						<?php echo $section1['paragraph']; ?>
 					</div>
 
@@ -46,7 +46,7 @@ get_header();
 
 
 
-		<section class="section section--2">
+		<section class="section section--2 section--pad">
 
 			<?php
 			$section2 = get_field('section_2');
@@ -56,20 +56,20 @@ get_header();
 				the_row(); ?>
 
 				<div class="grid-1340">
-					<div class="grid-60">
-						<h3><?php echo $section2['title']; ?></h3>
+					<div class="section__paragraph grid-60 pad-l-10">
+						<h2><?php echo $section2['title']; ?></h2>
 						<?php echo $section2['paragraph']; ?>
 
-						<ul>
+						<ul class="unordered-list">
 							<?php if( have_rows('list') ):
 								while ( have_rows('list') ) : the_row(); ?>
 
-									<li><?php echo get_sub_field('list_item'); ?></li>
+									<li class="unordered-list__item"><?php echo get_sub_field('list_item'); ?></li>
 
 								<?php endwhile;
 							endif; ?>
 						</ul>
-					</div>
+					</div><!-- End: section__paragraph -->
 				</div>
 
 				<?php endwhile;
@@ -81,21 +81,21 @@ get_header();
 
 
 
-		<section class="section section--3">
+		<section class="section section--3 section--pad">
 
 			<?php
 			$section3 = get_field('section_3');
 			if( $section3 ): ?>
-				<div>
-					<figure>
+				<div class="grid-1340 d-flex d-jcsb">
+					<figure class="grid-40">
 						<img src="<?php echo esc_url( $section3['image_1']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_1']['alt'] ); ?>" />
 					</figure>
 
-					<figure>
+					<figure class="grid-40">
 						<img src="<?php echo esc_url( $section3['image_2']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_2']['alt'] ); ?>" />
 					</figure>
 
-					<figure>
+					<figure class="grid-20">
 						<img src="<?php echo esc_url( $section3['image_3']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_3']['alt'] ); ?>" />
 					</figure>
 				</div>
@@ -115,22 +115,24 @@ get_header();
 				while ( have_rows('section_4') ) :
 				the_row(); ?>
 
-				<figure>
-					<img src="<?php echo esc_url( $section4['background_image']['url'] ); ?>" alt="<?php echo esc_attr( $section4['background_image']['alt'] ); ?>" />
-				</figure>
+				<div class="grid-1340">
+					<figure>
+						<img src="<?php echo esc_url( $section4['background_image']['url'] ); ?>" alt="<?php echo esc_attr( $section4['background_image']['alt'] ); ?>" />
+					</figure>
 
-				<div>
-					<?php echo $section4['title']; ?>
+					<div class="text-over-image pad-l-10 white-text">
+						<h2 class="white-text"><?php echo $section4['title']; ?></h2>
 
-					<ul>
-						<?php if( have_rows('list') ):
-							while ( have_rows('list') ) : the_row(); ?>
+						<ul class="unordered-list">
+							<?php if( have_rows('list') ):
+								while ( have_rows('list') ) : the_row(); ?>
 
-								<li><?php echo get_sub_field('list_item'); ?></li>
+									<li class="unordered-list__item"><?php echo get_sub_field('list_item'); ?></li>
 
-							<?php endwhile;
-						endif; ?>
-					</ul>
+								<?php endwhile;
+							endif; ?>
+						</ul>
+					</div><!-- End: text-over-image -->
 				</div>
 
 				<?php endwhile;
@@ -142,7 +144,7 @@ get_header();
 
 
 
-		<section class="section section--5">
+		<section class="section section--5 section--pad">
 
 			<?php
 			$section5 = get_field('section_5');
@@ -150,22 +152,22 @@ get_header();
 				while ( have_rows('section_5') ) :
 				the_row(); ?>
 
-				<div>
-					<div class="grid-60">
-						<?php echo $section5['title']; ?>
+				<div class="d-flex d-jcsb d-aic">
+					<div class="section__paragraph grid-60 pad-l-10">
+						<h2><?php echo $section5['title']; ?></h2>
 
-						<ul>
+						<ul class="unordered-list">
 							<?php if( have_rows('list') ):
 								while ( have_rows('list') ) : the_row(); ?>
 
-									<li><?php echo get_sub_field('list_item'); ?></li>
+									<li class="unordered-list__item"><?php echo get_sub_field('list_item'); ?></li>
 
 								<?php endwhile; // End: list loop
 							endif; ?>
 						</ul>
 					</div>
 
-					<figure>
+					<figure class="grid-35">
 						<img src="<?php echo esc_url( $section4['image']['url'] ); ?>" alt="<?php echo esc_attr( $section4['image']['alt'] ); ?>" />
 					</figure>
 				</div>
@@ -179,7 +181,7 @@ get_header();
 
 
 
-		<section class="section section--6">
+		<section class="section section--6 section--pad">
 
 			<?php
 			$section6 = get_field('section_6');
@@ -191,7 +193,7 @@ get_header();
 				the_row(); ?>
 
 				<div>
-					<div class="grid-60">
+					<div class="section__paragraph grid-60">
 					<?php echo $section6['paragraph']; ?>
 					</div>
 					
