@@ -30,8 +30,12 @@
     top: 0;
     z-index: -1;
   }
-}
 
+  &--seagull {
+    left: 0;
+    top: 0;
+  }
+}
 
 .waves {
   position: absolute;
@@ -41,6 +45,32 @@
     top: 36.7rem;
     z-index: 2;
   }
+
+  &--5 {
+    left: 0;
+    top: 16rem;
+  }
+
+  &--5-2 {
+    bottom: 22rem;
+    right: 32rem;
+    z-index: -1;
+  }
+}
+
+.waves-clouds {
+  position: absolute;
+
+  &--2 {
+
+  }
+}
+
+.border-dotted {
+  border-bottom: dotted $secondary-text-color;
+  margin-left: 10rem;
+  padding-top: 13rem;
+  width: 100%;
 }
 
 
@@ -140,19 +170,18 @@
 .section {
   position: relative;
 
-  &--pad {
+  &--pad-b {
     & > div {
       &:first-child {
-        padding-bottom: 10rem;
-        padding-top: 13rem;
+        padding-bottom: 15rem;
       }
     }
   }
 
-  &--1 {
+  &--pad-t {
     & > div {
       &:first-child {
-        border-bottom: dotted $secondary-text-color;
+        padding-top: 13rem;
       }
     }
   }
@@ -197,6 +226,20 @@
     }
   }
 
+  &--6 {
+    background-color: $primary-blue;
+
+    .section__paragraph {
+      color: $alt-text-color;
+      margin-left: 36rem;
+
+      p {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
   &__paragraph {
     p {
       margin-bottom: 4rem;
@@ -204,11 +247,71 @@
   }
 }
 
-
 @include desktop {
 
 }
 
+
+
+
+
+/*=============================================
+=           2.1 Section 6                    =
+=============================================*/
+
+.room {
+  margin-top: 10rem;
+
+  &__single {
+    margin-bottom: 7rem;
+    padding: 10rem;
+    position: relative;
+
+    &::before {
+      background-color: $secondary-bg-blue;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: calc(100% - 36rem);
+    }
+  }
+
+  &__description {
+    background-color: $primary-bg-blue;
+    float: left;
+    max-width: 54rem;
+    padding: 13rem 7rem;
+    z-index: 1;
+
+    h3 {
+      color: $text-color;
+      font-size: 3.2rem;
+      margin-bottom: 3rem;
+    }
+
+    p {
+      color: $secondary-text-color;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  &__design {
+    float: left;
+    z-index: 1;
+  }
+
+  &__size {
+    bottom: -1.7rem;
+    color: $text-color;
+    font-size: 11.3rem;
+    line-height: 1;
+    position: absolute;
+    right: -0.7rem;
+    z-index: 1;
+  }
+}
 
 
 

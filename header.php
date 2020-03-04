@@ -51,6 +51,8 @@
 	$logo 		= get_field('logo', 'option');
 	$graphic 	= get_field('bg_graphic_1', 'option');
 	$waves 		= get_field('waves', 'option');
+	$wavesClouds= get_field('waves_and_clouds', 'option');
+	$seagull 	= get_field('graphics_seagull', 'option');
 
 	$headerBg 	= get_field('header_image', 'option');
 	$headerTitle= get_field('header_title', 'option')

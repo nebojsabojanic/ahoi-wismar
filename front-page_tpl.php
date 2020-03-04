@@ -23,13 +23,13 @@ get_header();
 	<main class="page-content">
 
 
-		<section class="section section--1 section--pad">
+		<section class="section section--1 section--pad-t">
 
 			<?php
 			$section1 = get_field('section_1');
 
 			if( $section1 ): ?>
-				<div class="grid-1340 d-flex d-jcsb d-aic">
+				<div class="grid-1340 d-flex d-jcsb d-aic d-wrap">
 					<div class="section__paragraph grid-60 pad-l-10">
 						<?php echo $section1['paragraph']; ?>
 					</div>
@@ -37,8 +37,14 @@ get_header();
 					<figure class="grid-35">
 						<img src="<?php echo esc_url( $section1['image']['url'] ); ?>" alt="<?php echo esc_attr( $section1['image']['alt'] ); ?>" />
 					</figure>
+
+					<div class="border-dotted"></div>
 				</div>
 			<?php endif; ?>
+
+			<figure class="waves waves--1">
+				<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
+			</figure>
 
 		</section><!-- End: section--1 -->
 
@@ -46,7 +52,7 @@ get_header();
 
 
 
-		<section class="section section--2 section--pad">
+		<section class="section section--2 section--pad-b section--pad-t">
 
 			<?php
 			$section2 = get_field('section_2');
@@ -55,7 +61,7 @@ get_header();
 				while ( have_rows('section_2') ) :
 				the_row(); ?>
 
-				<div class="grid-1340">
+				<div class="grid-1340 d-flex d-jcsb d-aic">
 					<div class="section__paragraph grid-60 pad-l-10">
 						<h2><?php echo $section2['title']; ?></h2>
 						<?php echo $section2['paragraph']; ?>
@@ -70,6 +76,10 @@ get_header();
 							endif; ?>
 						</ul>
 					</div><!-- End: section__paragraph -->
+
+					<figure class="waves-clouds waves-clouds--2">
+						<img src="<?php echo $section2['waves_and_clouds']['url']; ?>" alt="<?php echo $section2['waves_and_clouds']['alt']; ?>">
+					</figure>
 				</div>
 
 				<?php endwhile;
@@ -81,7 +91,7 @@ get_header();
 
 
 
-		<section class="section section--3 section--pad">
+		<section class="section section--3 section--pad-b">
 
 			<?php
 			$section3 = get_field('section_3');
@@ -107,7 +117,7 @@ get_header();
 
 
 
-		<section class="section section--4">
+		<section class="section section--4 section--pad-b">
 
 			<?php
 			$section4 = get_field('section_4');
@@ -144,7 +154,11 @@ get_header();
 
 
 
-		<section class="section section--5 section--pad">
+		<section class="section section--5 section--pad-b section--pad-t">
+
+			<figure class="waves waves--5">
+				<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
+			</figure>
 
 			<?php
 			$section5 = get_field('section_5');
@@ -152,7 +166,7 @@ get_header();
 				while ( have_rows('section_5') ) :
 				the_row(); ?>
 
-				<div class="d-flex d-jcsb d-aic">
+				<div class="grid-1340 d-flex d-jcsb d-aic">
 					<div class="section__paragraph grid-60 pad-l-10">
 						<h2><?php echo $section5['title']; ?></h2>
 
@@ -170,10 +184,16 @@ get_header();
 					<figure class="grid-35">
 						<img src="<?php echo esc_url( $section4['image']['url'] ); ?>" alt="<?php echo esc_attr( $section4['image']['alt'] ); ?>" />
 					</figure>
+
+					
 				</div>
 
 				<?php endwhile; // End: section_5 loop
-			endif; ?>	
+			endif; ?>
+			
+			<figure class="waves waves--5-2">
+				<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
+			</figure>
 
 		</section><!-- End: section--5 -->
 
@@ -181,28 +201,31 @@ get_header();
 
 
 
-		<section class="section section--6 section--pad">
+		<section class="section section--6 section--pad-b section--pad-t">
+
+			<figure class="graphics graphics--seagull">
+				<img src="<?php echo $seagull['url']; ?>" alt="<?php echo $seagull['alt']; ?>">
+			</figure>
 
 			<?php
 			$section6 = get_field('section_6');
-
-
 
 			if( have_rows('section_6') ):
 				while ( have_rows('section_6') ) :
 				the_row(); ?>
 
-				<div>
+				<div class="grid-1340">
 					<div class="section__paragraph grid-60">
-					<?php echo $section6['paragraph']; ?>
+						<h2 class="white-text"><?php echo $section6['title']; ?></h2>
+						<?php echo $section6['paragraph']; ?>
 					</div>
 					
-					<div class="room d-flex d-col">
+					<div class="room d-flex d-column">
 
 						<?php if( have_rows('rooms') ):
 							while ( have_rows('rooms') ) : the_row(); ?>
 
-								<div class="room__single">
+								<div class="room__single d-flex d-aic">
 									<div class="room__description">
 										<h3><?php echo get_sub_field('title'); ?></h3>
 										<p class="paragraph"><?php echo get_sub_field('description'); ?></p>
