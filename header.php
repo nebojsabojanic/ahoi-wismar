@@ -35,6 +35,8 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="msapplication-tap-highlight" content="no"/>
 
+	<!-- Fonts -->
+	<link rel="stylesheet" href="https://use.typekit.net/oqg7vbm.css">
 
 	<!-- Cookie Law -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
@@ -51,40 +53,65 @@
 	$logo 		= get_field('logo', 'option');
 	$graphic 	= get_field('bg_graphic_1', 'option');
 	$waves 		= get_field('waves', 'option');
-	$wavesClouds= get_field('waves_and_clouds', 'option');
 	$seagull 	= get_field('graphics_seagull', 'option');
 
+	// echo '<pre>' . var_dump($waves) . '</pre>';
+	// echo '<pre>' . var_dump($seagull) . '</pre>';
+
 	$headerBg 	= get_field('header_image', 'option');
-	$headerTitle= get_field('header_title', 'option')
+	$headerTitle= get_field('header_title', 'option');
 ?>
 
-	<header class="header">
-		
-		<figure class="graphics graphics--header">
-			<img src="<?php echo $graphic['url']; ?>" alt="<?php echo $graphic['alt']; ?>">
-		</figure>
+	<?php if ( is_front_page() ) { ?>
 
-		<figure class="waves waves--header">
-			<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['url']; ?>">
-		</figure>
+		<header class="header">
 
+			<figure class="graphics graphics--header">
+				<img src="<?php echo $graphic['url']; ?>" alt="<?php echo $graphic['alt']; ?>">
+			</figure>
 
-
-		<div class="header__content grid-1340">
+			<div class="header__content grid-1340">
 			
-			<figure class="logo logo--header">
-				<a href="<?php echo home_url(); ?>">
-					<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
-				</a>
-			</figure>
+				<figure class="waves waves--header">
+					<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
+				</figure>
+				
+				<figure class="logo logo--header">
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+					</a>
+				</figure>
 
+				<figure class="header__image pad-l-10">
+					<img src="<?php echo $headerBg['url']; ?>" alt="<?php echo $headerBg['alt']; ?>">
+					<figcaption class="header__image-caption"><?php echo $headerTitle; ?></figcaption>
+				</figure>
 
-			<figure class="header__image pad-l-10">
-				<img src="<?php echo $headerBg['url']; ?>">
-				<figcaption class="header__image-caption"><?php echo $headerTitle; ?></figcaption>
-			</figure>
+			</div><!-- End: header__content -->
 
-		</div><!-- End: header__content -->
+		</header>
 
+	<?php } else { ?>
 
-	</header>
+		<header class="header header--alt">
+
+			<div class="header__content grid-1340">
+			
+				<figure class="waves waves--header">
+					<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
+				</figure>
+				
+				<figure class="logo logo--header">
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+					</a>
+				</figure>
+
+				<!-- Breadcrumb -->
+				<?php the_breadcrumb(); ?>
+
+			</div><!-- End: header__content -->
+
+		</header>
+
+	<?php } ?>

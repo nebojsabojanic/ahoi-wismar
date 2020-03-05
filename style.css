@@ -26,7 +26,7 @@ html {
 
 body {
   color: #277191;
-  font-family: 'Montserrat', sans-serif;
+  font-family: museo-sans, sans-serif;
   margin: 0;
   display: -webkit-box;
   display: flex;
@@ -53,6 +53,8 @@ p {
 h1,
 h2,
 h3 {
+  font-family: museo-slab, serif;
+  font-weight: 500;
   margin: 0; }
 
 h1 {
@@ -67,9 +69,14 @@ h2 {
   font-size: 3.2rem;
   letter-spacing: 0.1rem;
   margin-bottom: 4rem; }
+  h2 i {
+    font-style: italic;
+    font-weight: 700; }
 
 figure {
   margin: 0; }
+  figure img {
+    max-width: 100%; }
 
 a {
   color: #277191;
@@ -111,7 +118,7 @@ ol {
     font-size: 1.8rem;
     letter-spacing: 0.01rem;
     line-height: 1.4;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     padding-left: 1.5rem;
     position: relative; }
     .unordered-list .unordered-list__item::before {
@@ -347,17 +354,17 @@ ol {
     z-index: -1; }
   .graphics--seagull {
     left: 0;
-    top: 0; }
+    top: 13rem; }
 
 .waves {
   position: absolute; }
   .waves--header {
-    right: 12.1rem;
+    right: -12rem;
     top: 36.7rem;
     z-index: 2; }
   .waves--5 {
     left: 0;
-    top: 16rem; }
+    top: 14rem; }
   .waves--5-2 {
     bottom: 22rem;
     right: 32rem;
@@ -365,6 +372,8 @@ ol {
 
 .waves-clouds {
   position: absolute; }
+  .waves-clouds--2 {
+    right: 0; }
 
 .border-dotted {
   border-bottom: dotted #71B3CB;
@@ -385,6 +394,7 @@ ol {
   .header__image .header__image-caption {
     background-color: rgba(255, 255, 255, 0.6);
     color: #277191;
+    font-family: museo-slab, serif;
     font-size: 6rem;
     left: 10rem;
     letter-spacing: 0.1rem;
@@ -400,32 +410,25 @@ ol {
     margin-bottom: 2.5rem;
     text-align: center; }
   .logo--footer {
+    background-color: #71B3CB;
     bottom: 0;
-    left: 0;
+    left: calc(50% - 7.5rem);
+    padding: 2.5rem 4rem;
     position: absolute;
-    right: 0; }
+    text-align: center; }
 
 .breadcrumbs a {
   color: #277191;
   display: inline;
-  font-size: 1.6rem; }
+  font-size: 1.5rem;
+  letter-spacing: 1.5; }
 .breadcrumbs p {
-  color: #277191;
+  color: #B5E4FA;
   display: inline;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-left: 2rem;
-  padding-left: 3rem;
-  position: relative; }
-  .breadcrumbs p::before {
-    content: "";
-    background-color: #277191;
-    border-radius: 50%;
-    height: 1rem;
-    left: 0;
-    position: absolute;
-    top: 0.5rem;
-    width: 1rem; }
+  letter-spacing: 1.5;
+  margin-left: 1rem; }
 
 /*=============================================
 =           2. Page Home                    =
@@ -472,7 +475,7 @@ ol {
   margin-top: 10rem; }
   .room__single {
     margin-bottom: 7rem;
-    padding: 10rem;
+    padding: 10rem 15rem 7rem 0;
     position: relative; }
     .room__single::before {
       background-color: #71B3CB;
@@ -497,15 +500,25 @@ ol {
       letter-spacing: 0.1rem; }
   .room__design {
     float: left;
+    margin-left: 7rem;
+    max-width: 58rem;
     z-index: 1; }
   .room__size {
-    bottom: -1.7rem;
+    bottom: -1.8rem;
     color: #277191;
+    font-family: museo-slab, serif;
     font-size: 11.3rem;
+    font-weight: 500;
     line-height: 1;
     position: absolute;
     right: -0.7rem;
     z-index: 1; }
+
+.information-details {
+  color: #71B3CB;
+  font-family: museo-slab, serif;
+  font-weight: 500;
+  text-align: center; }
 
 /*=============================================
 =           3. Alt Pages                    =
@@ -535,22 +548,41 @@ ol {
 =           5. Footer                    =
 =============================================*/
 .footer {
+  background-color: #71B3CB;
+  padding-top: 7rem;
   position: relative; }
-  .footer__bg {
-    margin-bottom: -2px;
-    position: relative;
-    width: 100%;
-    z-index: 1; }
-  .footer__content {
-    bottom: 5.6rem;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: 2; }
-  .footer__copyright p {
+  .footer__top {
+    border-bottom: 3px dotted #277191;
+    padding-bottom: 4.5rem; }
+  .footer__bottom {
+    padding: 5.4rem 0; }
+  .footer__contact-info a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 3.2rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem; }
+    .footer__contact-info a:last-of-type {
+      margin-bottom: 0; }
+  .footer__address-info {
+    color: #FFFFFF;
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.7; }
+  .footer__copyright {
     color: #277191;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     letter-spacing: 0.07rem; }
+  .footer__menu-item {
+    display: inline-block;
+    margin-right: 5rem; }
+    .footer__menu-item:last-of-type {
+      margin-right: 0; }
+    .footer__menu-item a {
+      color: #277191;
+      font-size: 1.5rem;
+      text-transform: uppercase; }
 
 /*=============================================
 =            Section top header             =

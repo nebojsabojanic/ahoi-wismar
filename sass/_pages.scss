@@ -17,7 +17,8 @@
     
 
 -------------------------------------------------------------------*/
-
+// font-family: museo-sans, sans-serif;
+// font-family: museo-slab, serif;
 /*=============================================
 =           0. General                    =
 =============================================*/
@@ -33,7 +34,7 @@
 
   &--seagull {
     left: 0;
-    top: 0;
+    top: 13rem;
   }
 }
 
@@ -41,14 +42,14 @@
   position: absolute;
 
   &--header {
-    right: 12.1rem;
+    right: -12rem;
     top: 36.7rem;
     z-index: 2;
   }
 
   &--5 {
     left: 0;
-    top: 16rem;
+    top: 14rem;
   }
 
   &--5-2 {
@@ -62,7 +63,7 @@
   position: absolute;
 
   &--2 {
-
+    right: 0;
   }
 }
 
@@ -101,6 +102,7 @@
     .header__image-caption {
       background-color: rgba($color: $alt-text-color, $alpha: 0.6);
       color: $primary-blue;
+      font-family: museo-slab, serif;
       font-size: 6rem;
       left: 10rem;
       letter-spacing: 0.1rem;
@@ -122,10 +124,12 @@
   }
 
   &--footer {
+    background-color: $secondary-bg-blue;
     bottom: 0;
-    left: 0;
+    left: calc(50% - 7.5rem);
+    padding: 2.5rem 4rem;
     position: absolute;
-    right: 0;
+    text-align: center;
   }
 }
 
@@ -134,28 +138,17 @@
   a {
     color: $primary-blue;
     display: inline;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    letter-spacing: 1.5;
   }
 
   p {
-    color: $primary-blue;
+    color: $primary-bg-blue;
     display: inline;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-left: 2rem;
-    padding-left: 3rem;
-    position: relative;
-
-    &::before {
-      content: "";
-      background-color: $primary-blue;
-      border-radius: 50%;
-      height: 1rem;
-      left: 0;
-      position: absolute;
-      top: 0.5rem;
-      width: 1rem;
-    }
+    letter-spacing: 1.5;
+    margin-left: 1rem;
   }
 }
 
@@ -226,6 +219,10 @@
     }
   }
 
+  &--5 {
+    
+  }
+
   &--6 {
     background-color: $primary-blue;
 
@@ -264,7 +261,7 @@
 
   &__single {
     margin-bottom: 7rem;
-    padding: 10rem;
+    padding: 10rem 15rem 7rem 0;
     position: relative;
 
     &::before {
@@ -299,18 +296,29 @@
 
   &__design {
     float: left;
+    margin-left: 7rem;
+    max-width: 58rem;
     z-index: 1;
   }
 
   &__size {
-    bottom: -1.7rem;
+    bottom: -1.8rem;
     color: $text-color;
+    font-family: museo-slab, serif;
     font-size: 11.3rem;
+    font-weight: 500;
     line-height: 1;
     position: absolute;
     right: -0.7rem;
     z-index: 1;
   }
+}
+
+.information-details {
+  color: $secondary-text-color;
+  font-family: museo-slab, serif;
+  font-weight: 500;
+  text-align: center;
 }
 
 
@@ -368,29 +376,68 @@
 =============================================*/
 
 .footer {
+  background-color: $secondary-bg-blue;
+  padding-top: 7rem;
   position: relative;
 
-  &__bg {
-    margin-bottom: -2px;
-    position: relative;
-    width: 100%;
-    z-index: 1;
+  &__top {
+    border-bottom: 3px dotted $primary-blue;
+    padding-bottom: 4.5rem;
   }
 
-  &__content {
-    bottom: 5.6rem;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: 2;
+  &__bottom {
+    padding: 5.4rem 0;
+  }
+
+  &__contact-info {
+    a {
+      color: $alt-text-color;
+      display: block;
+      font-size: 3.2rem;
+      letter-spacing: 0.1rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__address-info {
+    color: $alt-text-color;
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.7;
   }
   
   &__copyright {
-    p {
-      color: $text-color;
-      font-size: 1.2rem;
-      letter-spacing: 0.07rem;
+    color: $text-color;
+    font-size: 1.6rem;
+    letter-spacing: 0.07rem;
+  }
+
+  &__menu {
+
+  }
+
+  &__menu-list {
+
+  }
+
+  &__menu-item {
+    display: inline-block;
+    margin-right: 5rem;
+
+    &:last-of-type {
+      margin-right: 0;
     }
+
+     a {
+      color: $text-color;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+     }
   }
 }
 
