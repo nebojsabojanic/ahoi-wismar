@@ -81,6 +81,8 @@ figure {
 a {
   color: #277191;
   text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
 
 ul {
   list-style: none;
@@ -362,6 +364,9 @@ ol {
     right: -12rem;
     top: 36.7rem;
     z-index: 2; }
+  .waves--1 {
+    right: -12rem;
+    top: 2rem; }
   .waves--5 {
     left: 0;
     top: 14rem; }
@@ -385,8 +390,29 @@ ol {
 =           1. Header                    =
 =============================================*/
 .header__content {
-  padding-bottom: 3.5rem;
+  padding-bottom: 4.5rem;
   padding-top: 3.5rem; }
+.header__title {
+  margin-bottom: 10rem;
+  padding: 8rem 10rem 8rem 0;
+  position: relative; }
+  .header__title::before {
+    background-color: #277191;
+    bottom: 0;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: calc(100% - 24rem);
+    z-index: -1; }
+.header__heading {
+  background-color: #FFFFFF;
+  color: #FCC8A6;
+  display: inline-block;
+  margin-bottom: 0;
+  min-width: 70rem;
+  padding: 4rem 0 4rem 12rem;
+  z-index: 1; }
 .header__image {
   position: relative; }
   .header__image img {
@@ -417,18 +443,24 @@ ol {
     position: absolute;
     text-align: center; }
 
-.breadcrumbs a {
-  color: #277191;
-  display: inline;
+.breadcrumbs {
   font-size: 1.5rem;
-  letter-spacing: 1.5; }
-.breadcrumbs p {
-  color: #B5E4FA;
-  display: inline;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1.5;
-  margin-left: 1rem; }
+  margin-bottom: 3rem;
+  text-align: center;
+  text-transform: uppercase; }
+  .breadcrumbs a {
+    color: #277191;
+    display: inline;
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+    margin-right: 1rem; }
+  .breadcrumbs p {
+    color: #B5E4FA;
+    display: inline;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    margin-left: 1rem; }
 
 /*=============================================
 =           2. Page Home                    =
@@ -523,6 +555,19 @@ ol {
 /*=============================================
 =           3. Alt Pages                    =
 =============================================*/
+.law__title {
+  color: #FCC8A6;
+  font-size: 1.6rem; }
+.law__content p {
+  font-size: 1.6rem;
+  margin-bottom: 3rem; }
+.law__content .unordered-list {
+  margin-bottom: 3rem;
+  padding-left: 3rem; }
+  .law__content .unordered-list .unordered-list__item {
+    font-size: 1.6rem;
+    margin-bottom: 0; }
+
 /*=============================================
 =           4. 404 page                    =
 =============================================*/
@@ -626,170 +671,31 @@ ol {
 /*=============================================
 =           0. General                    =
 =============================================*/
-@media screen and (max-width: 768px) {
-  .menu-btn--style {
-    left: 5rem;
-    top: 5rem; }
+@media screen and (max-width: 1366px) {
+  .grid-1340 {
+    padding: 0 2rem; }
 
-  .nav {
-    max-width: 100%;
-    width: 100%; }
-    .nav .menu-nav {
-      padding-right: 0;
-      -webkit-box-align: start;
-      -ms-flex-align: start;
-      align-items: start; }
-      .nav .menu-nav .main-nav {
-        padding-left: 10%;
-        padding-right: 10%; }
+  .graphics--seagull {
+    left: 2rem; }
 
-  .title h2 {
-    font-size: 2.5rem; }
-  .title__main {
-    font-size: 3.5rem;
-    font-weight: 600;
-    letter-spacing: 0.025rem;
-    margin-top: 1rem; }
-
-  .button a {
-    padding: 2rem 3rem; }
-
-  .paragraph {
-    width: 100%; } }
-@media screen and (max-width: 600px) {
-  .section {
-    padding-bottom: 8rem;
-    padding-top: 8rem; } }
+  .waves--5 {
+    display: none; }
+  .waves--5-2 {
+    right: 40rem; } }
 /*=============================================
 =           1. Header                    =
 =============================================*/
-@media screen and (max-width: 990px) {
-  .header__cover-wrap .header__cover--desktop {
-    display: none; }
-  .header__cover-wrap .header__cover--mobile {
-    display: block; } }
-@media screen and (max-width: 768px) {
-  .header__hamburger.open .menu-btn--style {
-    left: 10%; } }
-@media screen and (max-width: 600px) {
-  .header__hamburger .menu-btn--style {
-    left: 5%; } }
 /*=============================================
 =           2. Page Home                    =
 =============================================*/
-@media screen and (max-width: 990px) {
-  .column {
-    width: 100%; }
-    .column:first-of-type {
-      margin-bottom: 5rem; } }
-/*=============================================
-=           2.1 Section 1                    =
-=============================================*/
-@media screen and (max-width: 990px) {
-  .section1 {
-    flex-direction: column; }
-    .section1 .logo {
-      padding-right: 0; }
-    .section1 .graphics {
-      margin-top: 0; } }
-@media screen and (max-width: 600px) {
-  .section1 .logo img {
-    width: 50%; } }
-/*=============================================
-=           2.2 Section 2                    =
-=============================================*/
-@media screen and (max-width: 1600px) {
-  .graphics--section2 {
-    display: none; } }
-@media screen and (max-width: 990px) {
-  .section2 {
-    flex-direction: column; } }
-/*=============================================
-=           2.3 Section 3                    =
-=============================================*/
-@media screen and (max-width: 1600px) {
-  .graphics--section3 {
-    display: none; }
-
-  .graphics--section3-2 {
-    display: none; } }
-/*=============================================
-=           2.4 Section 4                    =
-=============================================*/
-@media screen and (max-width: 990px) {
-  .section4 {
-    flex-direction: column; }
-    .section4 .grid-60 {
-      margin-bottom: 5rem;
-      width: initial; }
-    .section4 .grid-35 {
-      width: initial; } }
-/*=============================================
-=           2.5 Section 5                    =
-=============================================*/
-@media screen and (max-width: 990px) {
-  .section5 .graphics {
-    display: none; }
-
-  .presentation-photos {
-    margin-top: 8rem; } }
-@media screen and (max-width: 768px) {
-  .presentation-photos {
-    flex-direction: column; }
-    .presentation-photos figure {
-      margin: 0 auto 3rem; } }
 /*=============================================
 =           2.6 Section 6                    =
 =============================================*/
-@media screen and (max-width: 768px) {
-  .contact-phone {
-    font-size: 2.5rem;
-    letter-spacing: 0.1rem; } }
-/*=============================================
-=           2.7 Section 7                    =
-=============================================*/
-@media screen and (max-width: 990px) {
-  .prices__block {
-    width: calc(50% - 1.5rem); }
-  .prices .prices__top .prices__price {
-    font-size: 4rem; } }
-@media screen and (max-width: 768px) {
-  .prices__block {
-    width: 100%; } }
 /*=============================================
 =           3. Alt Pages                    =
 =============================================*/
-@media screen and (max-width: 768px) {
-  .law__content--datenschutz p {
-    margin-bottom: 3rem; } }
 /*=============================================
 =           3. Footer                    =
 =============================================*/
-@media screen and (max-width: 768px) {
-  .footer {
-    padding-top: 5rem; }
-    .footer .footer__bg {
-      margin-bottom: -2px;
-      position: relative;
-      width: 100%;
-      z-index: 1; }
-      .footer .footer__bg--desktop {
-        display: none; }
-      .footer .footer__bg--tablet {
-        display: block; }
-    .footer .footer__content {
-      bottom: 1rem;
-      flex-direction: column;
-      text-align: center; }
-      .footer .footer__content .footer__menu {
-        margin-bottom: 1rem; }
-        .footer .footer__content .footer__menu ul {
-          padding-left: 2rem;
-          padding-right: 2rem; } }
-@media screen and (max-width: 600px) {
-  .footer .footer__bg--tablet {
-    display: none; }
-  .footer .footer__bg--mobile {
-    display: block; } }
 
 /*# sourceMappingURL=style.css.map */

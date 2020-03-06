@@ -47,6 +47,11 @@
     z-index: 2;
   }
 
+  &--1 {
+    right: -12rem;
+    top: 2rem;
+  }
+
   &--5 {
     left: 0;
     top: 14rem;
@@ -88,8 +93,35 @@
   }
 
   &__content {
-    padding-bottom: 3.5rem;
+    padding-bottom: 4.5rem;
     padding-top: 3.5rem;
+  }
+
+  &__title {
+    margin-bottom: 10rem;
+    padding: 8rem 10rem 8rem 0;
+    position: relative;
+
+    &::before {
+      background-color: $primary-blue;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: calc(100% - 24rem);
+      z-index: -1;
+    }
+  }
+
+  &__heading {
+    background-color: $alt-text-color;
+    color: $other-text-color;
+    display: inline-block;
+    margin-bottom: 0;
+    min-width: 70rem;
+    padding: 4rem 0 4rem 12rem;
+    z-index: 1;
   }
 
   &__image {
@@ -134,12 +166,17 @@
 }
 
 .breadcrumbs {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-transform: uppercase;
 
   a {
     color: $primary-blue;
     display: inline;
     font-size: 1.5rem;
-    letter-spacing: 1.5;
+    letter-spacing: 0.15rem;
+    margin-right: 1rem;
   }
 
   p {
@@ -147,7 +184,7 @@
     display: inline;
     font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 1.5;
+    letter-spacing: 0.15rem;
     margin-left: 1rem;
   }
 }
@@ -191,7 +228,7 @@
         max-width: 100%;
       }
     }
-  }
+  } // End: --3
 
   &--4 {
     figure {
@@ -217,11 +254,7 @@
         }
       }
     }
-  }
-
-  &--5 {
-    
-  }
+  } // End: --4
 
   &--6 {
     background-color: $primary-blue;
@@ -242,7 +275,7 @@
       margin-bottom: 4rem;
     }
   }
-}
+} // End: --6
 
 @include desktop {
 
@@ -312,7 +345,7 @@
     right: -0.7rem;
     z-index: 1;
   }
-}
+} // .room
 
 .information-details {
   color: $secondary-text-color;
@@ -329,9 +362,29 @@
 =           3. Alt Pages                    =
 =============================================*/
 
-.alt-page {
+.law {
+  &__title {
+    color: $other-text-color;
+    font-size: 1.6rem;
+  }
+
+  &__content {
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 3rem;
+    }
+
+    .unordered-list {
+      margin-bottom: 3rem;
+      padding-left: 3rem;
   
-}
+      .unordered-list__item {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+} // End: .law
 
 
 

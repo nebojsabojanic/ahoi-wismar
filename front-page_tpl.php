@@ -15,7 +15,7 @@ $seagull 	= get_field('graphics_seagull', 'option');
 	<main class="page-content">
 
 
-		<section class="section section--1 section--pad-t">
+		<section class="section section--1">
 
 			<div class="grid-1340 d-flex d-jcsb d-aic d-wrap">
 
@@ -35,11 +35,11 @@ $seagull 	= get_field('graphics_seagull', 'option');
 					
 				<?php endif; ?>
 
-				<figure class="waves waves--1">
-					<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
-				</figure>
-
 			</div><!-- End: grid-1340 -->
+			
+			<figure class="waves waves--1">
+				<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
+			</figure>
 
 		</section><!-- End: section--1 -->
 

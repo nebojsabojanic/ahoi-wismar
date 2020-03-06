@@ -62,56 +62,45 @@
 	$headerTitle= get_field('header_title', 'option');
 ?>
 
-	<?php if ( is_front_page() ) { ?>
+	<header class="header <?php if(is_front_page()){echo 'header--home';}else{echo 'header--alt';} ?>">
 
-		<header class="header">
+		<figure class="graphics graphics--header">
+			<img src="<?php echo $graphic['url']; ?>" alt="<?php echo $graphic['alt']; ?>">
+		</figure>
 
-			<figure class="graphics graphics--header">
-				<img src="<?php echo $graphic['url']; ?>" alt="<?php echo $graphic['alt']; ?>">
+		<div class="header__content grid-1340">
+		
+			<figure class="waves waves--header">
+				<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
+			</figure>
+			
+			<figure class="logo logo--header">
+				<a href="<?php echo home_url(); ?>">
+					<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+				</a>
 			</figure>
 
-			<div class="header__content grid-1340">
-			
-				<figure class="waves waves--header">
-					<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
-				</figure>
-				
-				<figure class="logo logo--header">
-					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
-					</a>
-				</figure>
+
+
+			<?php if(is_front_page()){ ?>
 
 				<figure class="header__image pad-l-10">
 					<img src="<?php echo $headerBg['url']; ?>" alt="<?php echo $headerBg['alt']; ?>">
 					<figcaption class="header__image-caption"><?php echo $headerTitle; ?></figcaption>
 				</figure>
 
-			</div><!-- End: header__content -->
-
-		</header>
-
-	<?php } else { ?>
-
-		<header class="header header--alt">
-
-			<div class="header__content grid-1340">
-			
-				<figure class="waves waves--header">
-					<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
-				</figure>
-				
-				<figure class="logo logo--header">
-					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
-					</a>
-				</figure>
+			<?php } else { ?>
 
 				<!-- Breadcrumb -->
 				<?php the_breadcrumb(); ?>
 
-			</div><!-- End: header__content -->
+				<div class="header__title">
+					<h1 class="header__heading"><?php the_title(); ?></h1>
+				</div>
 
-		</header>
+			<?php } ?>
 
-	<?php } ?>
+		</div><!-- End: header__content -->
+
+	</header>
+	
