@@ -389,45 +389,47 @@ ol {
 /*=============================================
 =           1. Header                    =
 =============================================*/
-.header__content {
-  padding-bottom: 4.5rem;
-  padding-top: 3.5rem; }
-.header__title {
-  margin-bottom: 10rem;
-  padding: 8rem 10rem 8rem 0;
-  position: relative; }
-  .header__title::before {
-    background-color: #277191;
-    bottom: 0;
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: calc(100% - 24rem);
-    z-index: -1; }
-.header__heading {
-  background-color: #FFFFFF;
-  color: #FCC8A6;
-  display: inline-block;
-  margin-bottom: 0;
-  min-width: 70rem;
-  padding: 4rem 0 4rem 12rem;
-  z-index: 1; }
-.header__image {
-  position: relative; }
-  .header__image img {
-    width: 100%; }
-  .header__image .header__image-caption {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #277191;
-    font-family: museo-slab, serif;
-    font-size: 6rem;
-    left: 10rem;
-    letter-spacing: 0.1rem;
-    line-height: 1.2;
-    padding: 1.7rem 3.4rem;
-    position: absolute;
-    top: 8rem; }
+.header {
+  overflow: hidden; }
+  .header__content {
+    padding-bottom: 4.5rem;
+    padding-top: 3.5rem; }
+  .header__title {
+    margin-bottom: 10rem;
+    padding: 8rem 10rem 8rem 0;
+    position: relative; }
+    .header__title::before {
+      background-color: #277191;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: calc(100% - 24rem);
+      z-index: -1; }
+  .header__heading {
+    background-color: #FFFFFF;
+    color: #FCC8A6;
+    display: inline-block;
+    margin-bottom: 0;
+    min-width: 70rem;
+    padding: 4rem 0 4rem 12rem;
+    z-index: 1; }
+  .header__image {
+    position: relative; }
+    .header__image img {
+      width: 100%; }
+    .header__image .header__image-caption {
+      background-color: rgba(255, 255, 255, 0.6);
+      color: #277191;
+      font-family: museo-slab, serif;
+      font-size: 6rem;
+      left: 10rem;
+      letter-spacing: 0.1rem;
+      line-height: 1.2;
+      padding: 1.7rem 3.4rem;
+      position: absolute;
+      top: 8rem; }
 
 .logo {
   margin: 0 auto;
@@ -436,12 +438,15 @@ ol {
     margin-bottom: 2.5rem;
     text-align: center; }
   .logo--footer {
-    background-color: #71B3CB;
     bottom: 0;
-    left: calc(50% - 7.5rem);
-    padding: 2.5rem 4rem;
+    left: 0;
     position: absolute;
+    right: 0;
     text-align: center; }
+    .logo--footer a {
+      background-color: #71B3CB;
+      padding: 0 4rem 1rem;
+      display: inline-block; }
 
 .breadcrumbs {
   font-size: 1.5rem;
@@ -465,6 +470,9 @@ ol {
 /*=============================================
 =           2. Page Home                    =
 =============================================*/
+.page-content {
+  overflow: hidden; }
+
 .section {
   position: relative; }
   .section--pad-b > div:first-child {
@@ -481,12 +489,11 @@ ol {
     width: 100%; }
     .section--4 figure img {
       width: 100%; }
+  .section--4 .image-behind {
+    padding-bottom: 5rem; }
   .section--4 .text-over-image {
-    left: 0;
     padding-left: 12.1rem;
-    padding-top: 13.8rem;
-    position: absolute;
-    top: 0; }
+    padding-top: 13.8rem; }
     .section--4 .text-over-image .unordered-list .unordered-list__item::before {
       background-color: #FFFFFF; }
   .section--6 {
@@ -519,7 +526,6 @@ ol {
       width: calc(100% - 36rem); }
   .room__description {
     background-color: #B5E4FA;
-    float: left;
     max-width: 54rem;
     padding: 13rem 7rem;
     z-index: 1; }
@@ -531,7 +537,6 @@ ol {
       color: #71B3CB;
       letter-spacing: 0.1rem; }
   .room__design {
-    float: left;
     margin-left: 7rem;
     max-width: 58rem;
     z-index: 1; }
@@ -600,7 +605,7 @@ ol {
     border-bottom: 3px dotted #277191;
     padding-bottom: 4.5rem; }
   .footer__bottom {
-    padding: 5.4rem 0; }
+    padding: 6rem 0; }
   .footer__contact-info a {
     color: #FFFFFF;
     display: block;
@@ -614,7 +619,8 @@ ol {
     color: #FFFFFF;
     font-size: 2.4rem;
     letter-spacing: 0.1rem;
-    line-height: 1.7; }
+    line-height: 1.7;
+    text-align: right; }
   .footer__copyright {
     color: #277191;
     font-size: 1.6rem;
@@ -673,7 +679,8 @@ ol {
 =============================================*/
 @media screen and (max-width: 1366px) {
   .grid-1340 {
-    padding: 0 2rem; }
+    padding-left: 2rem;
+    padding-right: 2rem; }
 
   .graphics--seagull {
     left: 2rem; }
@@ -681,21 +688,107 @@ ol {
   .waves--5 {
     display: none; }
   .waves--5-2 {
-    right: 40rem; } }
-/*=============================================
+    right: 40rem; }
+
+  .waves-clouds--2 {
+    right: 2rem; } }
+@media screen and (max-width: 990px) {
+  .pad-l-10 {
+    padding-left: 7rem; }
+
+  .border-dotted {
+    margin-left: 7rem;
+    padding-top: 10rem; } }
+@media screen and (max-width: 768px) {
+  .section--pad-t > div:first-child {
+    padding-top: 8rem; }
+
+  .section--pad-b > div:first-child {
+    padding-bottom: 8rem; } }
+/* =============================================
 =           1. Header                    =
-=============================================*/
+============================================= */
+@media screen and (max-width: 990px) {
+  .logo--footer {
+    bottom: 10.5rem; }
+
+  .header__image .header__image-caption {
+    left: 7rem; } }
 /*=============================================
 =           2. Page Home                    =
 =============================================*/
+@media screen and (max-width: 1160px) {
+  .section--4 .text-over-image {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 5rem; } }
 /*=============================================
 =           2.6 Section 6                    =
 =============================================*/
+@media screen and (max-width: 990px) {
+  .room__single {
+    flex-direction: column;
+    padding: 0 7rem 7rem; }
+    .room__single::before {
+      height: calc(100% - 20rem);
+      left: 0;
+      top: initial;
+      width: 100%; }
+  .room__description {
+    margin-bottom: 7rem;
+    padding: 10rem 7rem; }
+  .room__design {
+    margin-left: 0; } }
+@media screen and (max-width: 768px) {
+  .section--6 .section__paragraph {
+    margin-left: 26rem; } }
+@media screen and (max-width: 600px) {
+  .section--6 .section__paragraph {
+    margin-left: 0; }
+
+  .graphics--seagull {
+    display: none; }
+
+  .room__single {
+    padding: 0 2rem 4rem; }
+  .room__description {
+    margin-bottom: 6rem;
+    padding: 6rem 4rem; }
+  .room__size {
+    bottom: -1.4rem;
+    font-size: 8rem;
+    right: -0.6rem; } }
 /*=============================================
 =           3. Alt Pages                    =
 =============================================*/
 /*=============================================
 =           3. Footer                    =
 =============================================*/
+@media screen and (max-width: 990px) {
+  .footer {
+    padding-top: 5rem; }
+    .footer__top {
+      padding-bottom: 7rem; }
+    .footer__bottom {
+      padding-top: 15rem; } }
+@media screen and (max-width: 768px) {
+  .footer__top {
+    flex-direction: column;
+    padding-bottom: 9rem; }
+    .footer__top .footer__contact-info {
+      margin-bottom: 2rem;
+      text-align: center; }
+    .footer__top .footer__address-info {
+      text-align: center; }
+  .footer__bottom {
+    flex-direction: column-reverse;
+    padding-bottom: 3rem;
+    text-align: center; }
+    .footer__bottom .footer__menu {
+      margin-bottom: 1rem; }
+      .footer__bottom .footer__menu .footer__menu-list {
+        padding: 0; }
+        .footer__bottom .footer__menu .footer__menu-list .footer__menu-item a {
+          padding: 1rem; } }
 
 /*# sourceMappingURL=style.css.map */

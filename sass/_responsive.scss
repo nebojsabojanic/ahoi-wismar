@@ -24,7 +24,8 @@
 
 @include desktop {
     .grid-1340 {
-        padding: 0 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     .graphics {
@@ -48,17 +49,54 @@
             right: 40rem;
         }
     }
+
+    .waves-clouds {
+        &--2 {
+          right: 2rem;
+        }
+    }
 } // End: desktop
-   
-
-
-
-/*=============================================
-=           1. Header                    =
-=============================================*/
 
 @include laptop {
+    .pad-l-10 {
+        padding-left: 7rem;
+    }
 
+    .border-dotted {
+        margin-left: 7rem;
+        padding-top: 10rem;
+    }
+} // End: laptop
+
+@include tablet {
+    .section--pad-t > div:first-child {
+        padding-top: 8rem;
+    }
+    .section--pad-b > div:first-child {
+        padding-bottom: 8rem;
+    }
+} // End: tablet
+
+
+
+/* =============================================
+=           1. Header                    =
+============================================= */
+
+@include laptop {
+    .logo {
+        &--footer {
+            bottom: 10.5rem;
+        }
+    }
+
+    .header {
+        &__image {
+            .header__image-caption {
+                left: 7rem;
+            }
+        }
+    }
 } // End: laptop
 
 @include tablet {
@@ -77,7 +115,18 @@
 =           2. Page Home                    =
 =============================================*/
 
-
+@include mediumDesktop {
+    .section {
+        &--4 {
+            .text-over-image {
+                padding-left: 5rem;
+                padding-right: 5rem;
+                padding-top: 5rem;
+            }
+        }
+    } 
+    
+} // End: mediumDesktop
 
 
 
@@ -87,11 +136,73 @@
 =           2.6 Section 6                    =
 =============================================*/
 
+@include laptop {
+    .room {
+        &__single {
+            flex-direction: column;
+            padding: 0 7rem 7rem;
+
+            &::before {
+                height: calc(100% - 20rem);
+                left: 0;
+                top: initial;
+                width: 100%;
+            }
+        }
+
+        &__description {
+            margin-bottom: 7rem;
+            padding: 10rem 7rem;
+        }
+
+        &__design {
+            margin-left: 0;
+        }
+    } // .room
+} // End: laptop
+
 @include tablet {
+    .section {
+        &--6 {
+            .section__paragraph {
+                margin-left: 26rem;
+            }
+        }
+    }
+} // End: tablet
 
-}
+@include mobile {
+    .section {
+        &--6 {
+            .section__paragraph {
+                margin-left: 0;
+            }
+        }
+    }
 
+    .graphics {
+        &--seagull {
+            display: none;
+        }
+    }
 
+    .room {
+        &__single {
+            padding: 0 2rem 4rem;
+        }
+
+        &__description {
+            margin-bottom: 6rem;
+            padding: 6rem 4rem;
+        }
+
+        &__size {
+            bottom: -1.4rem;
+            font-size: 8rem;
+            right: -0.6rem;
+        }
+    } // .room
+} // End: mobile
 
 
 
@@ -115,8 +226,59 @@
 =           3. Footer                    =
 =============================================*/
 
-@include tablet {
+@include laptop {
+    .footer {
+        padding-top: 5rem;
+      
+        &__top {
+            padding-bottom: 7rem;
+        }
 
+        &__bottom {
+            padding-top: 15rem;
+        }
+    }
+} // End: laptop
+
+@include tablet {
+    .footer {
+        &__top {
+            flex-direction: column;
+            padding-bottom: 9rem;
+
+            .footer__contact-info {
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .footer__address-info {
+                text-align: center;
+            }
+        }
+
+        &__bottom {
+            flex-direction: column-reverse;
+            padding-bottom: 3rem;
+            text-align: center;
+
+            .footer__copyright {
+            }
+
+            .footer__menu {
+                margin-bottom: 1rem;
+
+                .footer__menu-list {
+                    padding: 0;
+
+                    .footer__menu-item {
+                        a {
+                            padding: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 } // End: tablet
 
 @include mobile {

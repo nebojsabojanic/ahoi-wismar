@@ -114,9 +114,9 @@ $seagull 	= get_field('graphics_seagull', 'option');
 
 
 
-		<section class="section section--4 section--pad-b">
+		<section class="section section--4">
 
-			<div class="grid-1340">
+			<div class="image-behind grid-1340 mb-8r" style="background: url('https://mediavuk.com/ahoi-wismar/wp-content/uploads/2020/03/ahoi-wismar-startseite-img-5.jpg'); background-size: 96% 100%; background-repeat: no-repeat; background-position: 50%;">
 
 				<?php
 				$section4 = get_field('section_4');
@@ -124,9 +124,9 @@ $seagull 	= get_field('graphics_seagull', 'option');
 					while ( have_rows('section_4') ) :
 					the_row(); ?>
 
-					<figure>
+					<!-- <figure>
 						<img src="<?php echo esc_url( $section4['background_image']['url'] ); ?>" alt="<?php echo esc_attr( $section4['background_image']['alt'] ); ?>" />
-					</figure>
+					</figure> -->
 
 					<div class="text-over-image pad-l-10 white-text">
 						<h2 class="white-text"><?php echo $section4['title']; ?></h2>
@@ -210,7 +210,7 @@ $seagull 	= get_field('graphics_seagull', 'option');
 					while ( have_rows('section_6') ) :
 					the_row(); ?>
 				
-					<div class="section__paragraph grid-60">
+					<div class="section__paragraph">
 						<h2 class="white-text"><?php echo $section6['title']; ?></h2>
 						<?php echo $section6['paragraph']; ?>
 					</div>

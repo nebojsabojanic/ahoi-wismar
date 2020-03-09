@@ -17,7 +17,7 @@
 				</div>
 
 				<div class="footer__address-info">
-					<p><?php echo $address; ?></p>
+					<?php echo $address; ?>
 				</div>
 			</div>	
 
