@@ -407,7 +407,8 @@ ol {
 /* SVG animation */
 svg {
   display: block;
-  margin: auto; }
+  margin: auto;
+  max-width: 100%; }
 
 #boat {
   transform-origin: 200px 200px;
@@ -599,18 +600,22 @@ svg {
 /*=============================================
 =           3. Alt Pages                    =
 =============================================*/
-.law__title {
-  color: #FCC8A6;
-  font-size: 1.6rem; }
-.law__content p {
-  font-size: 1.6rem;
-  margin-bottom: 3rem; }
-.law__content .unordered-list {
-  margin-bottom: 3rem;
-  padding-left: 3rem; }
-  .law__content .unordered-list .unordered-list__item {
+.law {
+  margin-bottom: 6rem; }
+  .law__title {
+    color: #FCC8A6;
+    font-size: 1.6rem; }
+  .law__content p {
     font-size: 1.6rem;
-    margin-bottom: 0; }
+    margin-bottom: 3rem; }
+  .law__content .unordered-list {
+    margin-bottom: 3rem;
+    padding-left: 3rem; }
+    .law__content .unordered-list .unordered-list__item {
+      font-size: 1.6rem;
+      margin-bottom: 0; }
+  .law .information-details {
+    margin-top: 15rem; }
 
 /*=============================================
 =           4. 404 page                    =
@@ -644,7 +649,8 @@ svg {
     border-bottom: 3px dotted #277191;
     padding-bottom: 4.5rem; }
   .footer__bottom {
-    padding: 6rem 0; }
+    padding: 6rem 0;
+    z-index: 2; }
   .footer__contact-info a {
     color: #FFFFFF;
     display: block;
@@ -664,12 +670,12 @@ svg {
     color: #277191;
     font-size: 1.6rem;
     letter-spacing: 0.07rem; }
-  .footer__menu-item {
+  .footer__menu-list li {
     display: inline-block;
     margin-right: 5rem; }
-    .footer__menu-item:last-of-type {
+    .footer__menu-list li:last-of-type {
       margin-right: 0; }
-    .footer__menu-item a {
+    .footer__menu-list li a {
       color: #277191;
       font-size: 1.5rem;
       text-transform: uppercase; }
@@ -766,8 +772,19 @@ svg {
   .logo--footer {
     bottom: 10.5rem; }
 
+  .header__title {
+    padding-right: 2rem; }
+    .header__title::before {
+      width: calc(100% - 10rem); }
   .header__image .header__image-caption {
     left: 7rem; } }
+@media screen and (max-width: 768px) {
+  .header__heading {
+    font-size: 2.6rem;
+    min-width: 90%;
+    max-width: 100%;
+    padding-left: 2rem;
+    z-index: 1; } }
 @media screen and (max-width: 600px) {
   .header__image .header__image-caption {
     font-size: 5rem;

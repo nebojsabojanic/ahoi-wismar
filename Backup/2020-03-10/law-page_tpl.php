@@ -6,6 +6,8 @@ get_header();
 
 $waves 		= get_field('waves', 'option');
 
+$footerQuestion = get_field('question_phrase', 'option');
+
 ?>
 
 	<main class="page-content">
@@ -15,7 +17,7 @@ $waves 		= get_field('waves', 'option');
 				the_post(); ?>
 
 				<div class="law grid-1340 pad-l-10">
-				
+
 					<?php the_content(); ?>
 
 					<?php if( have_rows('rules') ):
@@ -35,12 +37,12 @@ $waves 		= get_field('waves', 'option');
 						<?php endwhile; // End: rules loop
 					endif; ?>
 
+					<p class="information-details"><?php echo $footerQuestion; ?></p>
+
 				</div><!-- End: law -->
 
 			<?php endwhile;
 		endif; ?>
-
-		
 
 	</main><!-- End: page-content -->
 

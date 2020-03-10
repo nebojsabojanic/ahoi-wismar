@@ -8,6 +8,7 @@ get_header();
 $waves 		= get_field('waves', 'option');
 $seagull 	= get_field('graphics_seagull', 'option');
 
+$footerQuestion = get_field('question_phrase', 'option');
 
 ?>
 
@@ -270,7 +271,7 @@ $seagull 	= get_field('graphics_seagull', 'option');
 							<?php endwhile; // End: rooms loop
 						endif; ?>
 
-						<p class="information-details"><?php echo $section6['information_details']; ?></p>
+						<p class="information-details"><?php echo $footerQuestion; ?></p>
 
 					</div><!-- End: room -->
 

@@ -30,17 +30,14 @@
 			<div class="footer__bottom d-flex d-jcsb d-fdcr-t">
 				<small class="footer__copyright">&copy;<?php echo date('Y');?> <?php echo $copyright; ?></small>
 
-				<div class="footer__menu">
-					<ul class="footer__menu-list">
-						<li class="footer__menu-item">
-							<a href="">Impressum</a>
-						</li>
-
-						<li class="footer__menu-item">
-							<a href="">Datenschutzerklärung</a>
-						</li>
-					</ul>
-				</div>
+				<?php
+					$footerMenu = array(
+						'theme_location'	=> 'footer-nav',
+						'container_class'	=> 'footer__menu',
+						'menu_class'		=> 'footer__menu-list',
+					);
+					wp_nav_menu($footerMenu); 
+				?>
 			</div>
 
 		</div><!-- End: grid-1340 -->

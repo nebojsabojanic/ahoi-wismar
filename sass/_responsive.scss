@@ -130,6 +130,14 @@
     }
 
     .header {
+        &__title {
+            padding-right: 2rem;
+
+            &::before {
+                width: calc(100% - 10rem);
+            }
+        }
+
         &__image {
             .header__image-caption {
                 left: 7rem;
@@ -139,7 +147,15 @@
 } // End: laptop
 
 @include tablet {
-
+    .header {
+        &__heading {
+            font-size: 2.6rem;
+            min-width: 90%;
+            max-width: 100%;
+            padding-left: 2rem;
+            z-index: 1;
+        }
+    }
 } // End: tablet
 
 @include mobile {

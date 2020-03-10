@@ -83,6 +83,7 @@
 svg {
   display:block;
   margin: auto;
+  max-width: 100%;
 }
 #boat {
   transform-origin: 200px 200px;
@@ -390,7 +391,7 @@ svg {
 =============================================*/
 
 .law {
-  margin-bottom: 15rem;
+  margin-bottom: 6rem;
 
   &__title {
     color: $other-text-color;
@@ -412,6 +413,10 @@ svg {
         margin-bottom: 0;
       }
     }
+  }
+
+  .information-details {
+    margin-top: 15rem;
   }
 } // End: .law
 
@@ -469,6 +474,7 @@ svg {
 
   &__bottom {
     padding: 6rem 0;
+    z-index: 2;
   }
 
   &__contact-info {
@@ -500,19 +506,21 @@ svg {
     letter-spacing: 0.07rem;
   }
 
-  &__menu-item {
-    display: inline-block;
-    margin-right: 5rem;
+  &__menu-list {
+    li {
+      display: inline-block;
+      margin-right: 5rem;
 
-    &:last-of-type {
-      margin-right: 0;
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      a {
+        color: $text-color;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+      }
     }
-
-     a {
-      color: $text-color;
-      font-size: 1.5rem;
-      text-transform: uppercase;
-     }
   }
 }
 
