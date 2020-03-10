@@ -599,20 +599,18 @@ svg {
 /*=============================================
 =           3. Alt Pages                    =
 =============================================*/
-.law {
-  margin-bottom: 15rem; }
-  .law__title {
-    color: #FCC8A6;
-    font-size: 1.6rem; }
-  .law__content p {
+.law__title {
+  color: #FCC8A6;
+  font-size: 1.6rem; }
+.law__content p {
+  font-size: 1.6rem;
+  margin-bottom: 3rem; }
+.law__content .unordered-list {
+  margin-bottom: 3rem;
+  padding-left: 3rem; }
+  .law__content .unordered-list .unordered-list__item {
     font-size: 1.6rem;
-    margin-bottom: 3rem; }
-  .law__content .unordered-list {
-    margin-bottom: 3rem;
-    padding-left: 3rem; }
-    .law__content .unordered-list .unordered-list__item {
-      font-size: 1.6rem;
-      margin-bottom: 0; }
+    margin-bottom: 0; }
 
 /*=============================================
 =           4. 404 page                    =

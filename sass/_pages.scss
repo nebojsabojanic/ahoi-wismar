@@ -79,6 +79,23 @@
   width: 100%;
 }
 
+/* SVG animation */
+svg {
+  display:block;
+  margin: auto;
+}
+#boat {
+  transform-origin: 200px 200px;
+  animation: boatmove 7s infinite;
+  animation-delay:0.25s;
+}
+@keyframes boatmove{
+  0% {transform: rotate(2deg)translate(5px, 35px)}
+  25% {transform:rotate(-1deg) translate(0px, 60px)  }
+  50% {transform:rotate(3deg) translate(-15px, 35px) }
+  75% {transform:rotate(-1deg) translate(0px, 45px)}
+  100%{transform:rotate(2deg) translate(5px, 35px)}
+}
 
 
 
@@ -373,6 +390,8 @@
 =============================================*/
 
 .law {
+  margin-bottom: 15rem;
+
   &__title {
     color: $other-text-color;
     font-size: 1.6rem;

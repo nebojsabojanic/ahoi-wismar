@@ -315,8 +315,7 @@ ol {
 .d-column {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-            flex-direction: column;
-}
+            flex-direction: column; }
 
 .d-jcsb {
     -webkit-box-pack: justify;
@@ -344,6 +343,33 @@ ol {
 .d-wrap {
     -o-flex-wrap: wrap;
     flex-wrap: wrap; }
+
+@include laptop {
+    .d-fdc-l {
+        flex-direction: column;
+    }
+    .d-fdcr-l {
+        flex-direction: column-reverse;
+    }
+} // End: laptop
+
+@include tablet {
+    .d-fdc-t {
+        flex-direction: column;
+    }
+    .d-fdcr-t {
+        flex-direction: column-reverse;
+    }
+} // End: tablet
+
+@include mobile {
+    .d-fdc-m {
+        flex-direction: column;
+    }
+    .d-fdcr-m {
+        flex-direction: column-reverse;
+    }
+} // End: mobile
 
 .ta-center {
     text-align: center;

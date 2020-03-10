@@ -35,12 +35,6 @@
       }
 
     .waves {
-        &--header {
-        }
-
-        &--1 {
-        }
-
         &--5 {
             display: none;
         }
@@ -62,20 +56,65 @@
         padding-left: 7rem;
     }
 
+    .waves {
+        &--5-2 {
+            display: none;
+        }
+    }
+
     .border-dotted {
         margin-left: 7rem;
-        padding-top: 10rem;
+        padding-top: 8rem;
     }
 } // End: laptop
 
 @include tablet {
-    .section--pad-t > div:first-child {
-        padding-top: 8rem;
+    .section {
+        &--pad-t {
+            & > div {
+                &:first-child {
+                    padding-top: 8rem;
+                }
+            }
+        }
     }
-    .section--pad-b > div:first-child {
-        padding-bottom: 8rem;
+
+    .section {
+        &--pad-b {
+            & > div {
+                &:first-child {
+                    padding-bottom: 8rem;
+                }
+            }
+        }
+    }
+
+    .waves {
+        &--1 {
+            display: none;
+        }
+    }
+
+    .waves-clouds {
+        &--2 {
+            display: none;
+        }
     }
 } // End: tablet
+
+@include mobile {
+    .waves {
+        &--header {
+            display: none;
+        }
+    }
+
+    .pad-l-10 {
+        padding-left: 4rem;
+    }
+} // End: mobile
+
+
 
 
 
@@ -104,7 +143,15 @@
 } // End: tablet
 
 @include mobile {
-
+    .header {
+        &__image {
+            .header__image-caption {
+                font-size: 5rem;
+                left: 4rem;
+                top: 2rem;
+            }
+        }
+    }
 } // End: mobile
 
 
@@ -124,10 +171,62 @@
                 padding-top: 5rem;
             }
         }
-    } 
-    
+    }
 } // End: mediumDesktop
 
+@include tablet {
+    .section {
+        &--1 {
+            .d-wrap {
+                flex-wrap: initial;
+            }
+
+            .section__paragraph {
+                margin-bottom: 5rem;
+
+                &.grid-60 {
+                    width: 100%;
+                }
+            }
+
+            .grid-35 {
+                width: 100%;
+            }
+        }
+
+        &--2 {
+            .grid-60 {
+                width: 100%;
+            }
+        }
+
+        &--3 {
+            figure {
+                margin-right: 0;
+
+                &.grid-40 {
+                    width: 100%;
+                }
+
+                &.grid-20 {
+                    margin: 0 auto;
+                    width: 70%;
+                }
+            }
+        } // End: --3
+
+        &--5 {
+            .grid-60 {
+                margin-bottom: 4rem;
+                width: 100%;
+            }
+
+            .grid-35 {
+                width: 50%;
+            }
+        }
+    }
+} // End: tablet
 
 
 
@@ -139,7 +238,6 @@
 @include laptop {
     .room {
         &__single {
-            flex-direction: column;
             padding: 0 7rem 7rem;
 
             &::before {
@@ -243,7 +341,6 @@
 @include tablet {
     .footer {
         &__top {
-            flex-direction: column;
             padding-bottom: 9rem;
 
             .footer__contact-info {
@@ -257,7 +354,6 @@
         }
 
         &__bottom {
-            flex-direction: column-reverse;
             padding-bottom: 3rem;
             text-align: center;
 
