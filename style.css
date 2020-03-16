@@ -151,6 +151,7 @@ ol {
 .grid-30,
 .grid-33,
 .grid-35,
+.grid-38,
 .grid-40,
 .grid-45,
 .grid-50,
@@ -196,6 +197,9 @@ ol {
 
 .grid-35 {
   width: 35%; }
+
+.grid-38 {
+  width: 38%; }
 
 .grid-40 {
   width: 40%; }
@@ -302,6 +306,7 @@ ol {
   align-items: flex-end; }
 
 .d-wrap {
+  -webkit-flex-wrap: wrap;
   -o-flex-wrap: wrap;
   flex-wrap: wrap; }
 
@@ -334,6 +339,9 @@ ol {
 
 .mb-8r {
   margin-bottom: 8rem; }
+
+.mb-16r {
+  margin-bottom: 16rem; }
 
 .mt-6r {
   margin-top: 6rem; }
@@ -511,7 +519,20 @@ svg {
 =           2. Page Home                    =
 =============================================*/
 .page-content {
+  background-color: rgba(181, 228, 250, 0.15);
   overflow: hidden; }
+
+.background-waves {
+  position: relative; }
+  .background-waves::before {
+    background-color: #71B3CB;
+    content: '';
+    height: calc(100% - 36rem);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1; }
 
 .section {
   position: relative; }
@@ -519,11 +540,20 @@ svg {
     padding-bottom: 15rem; }
   .section--pad-t > div:first-child {
     padding-top: 13rem; }
+  .section--1 {
+    background-color: #FFFFFF; }
+  .section--2 p {
+    color: #FFFFFF; }
+  .section--2 .unordered-list {
+    color: #FFFFFF; }
+    .section--2 .unordered-list .unordered-list__item::before {
+      background-color: #FFFFFF; }
   .section--3 figure {
     margin-right: 4rem; }
     .section--3 figure:last-child {
       margin-right: 0; }
     .section--3 figure img {
+      border: 15px solid #FFFFFF;
       max-width: 100%; }
   .section--4 figure {
     width: 100%; }
@@ -811,7 +841,7 @@ svg {
     width: 100%; }
   .section--3 figure {
     margin-right: 0; }
-    .section--3 figure.grid-40 {
+    .section--3 figure.grid-38 {
       width: 100%; }
     .section--3 figure.grid-20 {
       margin: 0 auto;

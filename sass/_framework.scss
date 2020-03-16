@@ -181,6 +181,7 @@ ol {
 .grid-30,
 .grid-33,
 .grid-35,
+.grid-38,
 .grid-40,
 .grid-45,
 .grid-50,
@@ -227,6 +228,9 @@ ol {
 
 .grid-35 {
     width: 35%; }
+
+.grid-38 {
+    width: 38%; }
 
 .grid-40 {
     width: 40%; }
@@ -341,6 +345,7 @@ ol {
     align-items: flex-end; }
 
 .d-wrap {
+    -webkit-flex-wrap: wrap;
     -o-flex-wrap: wrap;
     flex-wrap: wrap; }
 
@@ -386,6 +391,10 @@ ol {
 
 .mb-8r {
     margin-bottom: 8rem;
+}
+
+.mb-16r {
+    margin-bottom: 16rem;
 }
 
 // Margin Top

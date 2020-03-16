@@ -16,7 +16,7 @@ $footerQuestion = get_field('question_phrase', 'option');
 	<main class="page-content">
 
 
-		<section class="section section--1">
+		<section class="section section--1 section--pad-b">
 
 			<div class="grid-1340 d-flex d-jcsb d-aic d-wrap d-fdc-t">
 
@@ -61,12 +61,10 @@ $footerQuestion = get_field('question_phrase', 'option');
 						</svg>
 					</div><!-- End: grid-35 -->
 
-					<div class="border-dotted"></div>
-					
 				<?php endif; ?>
 
 			</div><!-- End: grid-1340 -->
-			
+
 			<figure class="waves waves--1">
 				<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
 			</figure>
@@ -77,76 +75,78 @@ $footerQuestion = get_field('question_phrase', 'option');
 
 
 
-		<section class="section section--2 section--pad-b section--pad-t">
+		<div class="background-waves">
 
-			<div class="grid-1340 d-flex d-jcsb d-aic d-fdc-t">
+			<section class="section section--2 section--pad-b section--pad-t">
+
+				<div class="grid-1340 d-flex d-jcsb d-aic d-fdc-t">
+
+					<?php
+					$section2 = get_field('section_2');
+
+					if( have_rows('section_2') ):
+						while ( have_rows('section_2') ) :
+						the_row(); ?>
+
+						<div class="section__paragraph grid-60 pad-l-10">
+							<h2 class="white-text"><?php echo $section2['title']; ?></h2>
+							<?php echo $section2['paragraph']; ?>
+
+							<ul class="unordered-list">
+								<?php if( have_rows('list') ):
+									while ( have_rows('list') ) : the_row(); ?>
+
+										<li class="unordered-list__item"><?php echo get_sub_field('list_item'); ?></li>
+
+									<?php endwhile;
+								endif; ?>
+							</ul>
+						</div><!-- End: section__paragraph -->
+
+						<figure class="waves-clouds waves-clouds--2">
+							<img src="<?php echo $section2['waves_and_clouds']['url']; ?>" alt="<?php echo $section2['waves_and_clouds']['alt']; ?>">
+						</figure>
+					
+						<?php endwhile;
+					endif; ?>
+
+				</div><!-- End: grid-1340 -->
+
+			</section><!-- End: section--2 -->
+
+
+
+
+
+			<section class="section section--3 section--pad-b">
 
 				<?php
-				$section2 = get_field('section_2');
+				$section3 = get_field('section_3');
+				if( $section3 ): ?>
+					<div class="grid-1340 d-flex d-jcsb d-fdc-t">
+						<figure class="grid-38">
+							<img src="<?php echo esc_url( $section3['image_1']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_1']['alt'] ); ?>" />
+						</figure>
 
-				if( have_rows('section_2') ):
-					while ( have_rows('section_2') ) :
-					the_row(); ?>
+						<figure class="grid-38">
+							<img src="<?php echo esc_url( $section3['image_2']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_2']['alt'] ); ?>" />
+						</figure>
 
-					<div class="section__paragraph grid-60 pad-l-10">
-						<h2><?php echo $section2['title']; ?></h2>
-						<?php echo $section2['paragraph']; ?>
+						<figure class="grid-20">
+							<img src="<?php echo esc_url( $section3['image_3']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_3']['alt'] ); ?>" />
+						</figure>
+					</div><!-- End: grid-1340 -->
+				<?php endif; ?>
 
-						<ul class="unordered-list">
-							<?php if( have_rows('list') ):
-								while ( have_rows('list') ) : the_row(); ?>
+			</section><!-- End: section--3 -->
 
-									<li class="unordered-list__item"><?php echo get_sub_field('list_item'); ?></li>
-
-								<?php endwhile;
-							endif; ?>
-						</ul>
-					</div><!-- End: section__paragraph -->
-
-					<figure class="waves-clouds waves-clouds--2">
-						<img src="<?php echo $section2['waves_and_clouds']['url']; ?>" alt="<?php echo $section2['waves_and_clouds']['alt']; ?>">
-					</figure>
-				
-					<?php endwhile;
-				endif; ?>
-
-			</div><!-- End: grid-1340 -->
-
-		</section><!-- End: section--2 -->
-
-
-
-
-
-		<section class="section section--3 section--pad-b">
-
-			<?php
-			$section3 = get_field('section_3');
-			if( $section3 ): ?>
-				<div class="grid-1340 d-flex d-jcsb d-fdc-t">
-					<figure class="grid-40">
-						<img src="<?php echo esc_url( $section3['image_1']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_1']['alt'] ); ?>" />
-					</figure>
-
-					<figure class="grid-40">
-						<img src="<?php echo esc_url( $section3['image_2']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_2']['alt'] ); ?>" />
-					</figure>
-
-					<figure class="grid-20">
-						<img src="<?php echo esc_url( $section3['image_3']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_3']['alt'] ); ?>" />
-					</figure>
-				</div><!-- End: grid-1340 -->
-			<?php endif; ?>
-
-		</section><!-- End: section--3 -->
-
-
+		</div><!-- End: background-waves -->
 
 
 
 		<section class="section section--4">
 
-			<div class="image-behind grid-1340 mb-8r" style="background: url('https://mediavuk.com/ahoi-wismar/wp-content/uploads/2020/03/ahoi-wismar-startseite-img-5.jpg'); background-size: 96% 100%; background-repeat: no-repeat; background-position: 50%;">
+			<div class="image-behind grid-1340 mb-16r" style="background: url('https://mediavuk.com/ahoi-wismar/wp-content/uploads/2020/03/ahoi-wismar-startseite-img-5.jpg'); background-size: 96% 100%; background-repeat: no-repeat; background-position: 50%;">
 
 				<?php
 				$section4 = get_field('section_4');
