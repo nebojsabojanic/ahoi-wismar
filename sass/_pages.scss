@@ -54,12 +54,12 @@
 
   &--5 {
     left: 0;
-    top: 14rem;
+    top: 0;
   }
 
   &--5-2 {
     bottom: 22rem;
-    right: 32rem;
+    right: 30%;
     z-index: -1;
   }
 }
@@ -69,6 +69,20 @@
 
   &--2 {
     right: 0;
+  }
+}
+
+.circle {
+  bottom: -20rem;
+  border-radius: 50%;
+  height: 65rem;
+  left: -8rem;
+  opacity: 0.5;
+  position: absolute;
+  width: 65rem;
+
+  &--yellow {
+    background-color: $circle-sun;
   }
 }
 
@@ -152,16 +166,16 @@ svg {
     }
 
     .header__image-caption {
-      background-color: rgba($color: $alt-text-color, $alpha: 0.6);
-      color: $primary-blue;
+      color: #1D5F7A;
       font-family: museo-slab, serif;
       font-size: 6rem;
       left: 10rem;
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.06rem;
       line-height: 1.2;
       padding: 1.7rem 3.4rem;
       position: absolute;
-      top: 8rem;
+      top: 8.3rem;
+      text-transform: uppercase;
     }
   }
 }
@@ -223,7 +237,6 @@ svg {
 =============================================*/
 
 .page-content {
-  background-color: rgba($color: $primary-bg-blue, $alpha: 0.15);
   overflow: hidden;
 }
 
@@ -231,13 +244,43 @@ svg {
   position: relative;
 
   &::before {
-    background-color: #71B3CB;
     content: '';
-    height: calc(100% - 36rem);
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
+    z-index: -1;
+  }
+
+  &--dark-blue {
+    &::before {
+      background-color: $primary-blue;
+      height: 100%;
+    }
+  }
+
+  &--light-blue {
+    &::before {
+      background-color: $secondary-bg-blue;
+      height: 75%;
+    }
+  }
+
+  &__top {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__bottom {
+    bottom: 24%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
     z-index: -1;
   }
 }
@@ -259,10 +302,6 @@ svg {
         padding-top: 13rem;
       }
     }
-  }
-
-  &--1 {
-    background-color: $alt-text-color;
   }
 
   &--2 {
@@ -310,22 +349,16 @@ svg {
     }
 
     .text-over-image {
-      padding-left: 12.1rem;
-      padding-top: 13.8rem;
-
-      .unordered-list {
-        .unordered-list__item {
-          &::before {
-            background-color: $alt-text-color;
-          }
-        }
-      }
+      background-color: rgba($color: $alt-text-color, $alpha: 0.75);
+      display: inline-block;
+      margin-left: 8rem;
+      margin-top: 11rem;
+      padding-left: 2rem;
+      padding-top: 1rem;
     }
   } // End: --4
 
   &--6 {
-    background-color: $primary-blue;
-
     .section__paragraph {
       color: $alt-text-color;
       margin-left: 36rem;

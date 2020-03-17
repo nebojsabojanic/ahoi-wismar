@@ -214,10 +214,19 @@
             .grid-60 {
                 width: 100%;
             }
+
+            &.section--pad-t {
+                & > div {
+                    &:first-child {
+                        padding-top: 16rem;
+                    }
+                }
+            }
         }
 
         &--3 {
             figure {
+                margin-bottom: 2rem;
                 margin-right: 0;
 
                 &.grid-38 {
