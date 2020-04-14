@@ -59,7 +59,7 @@
 
   &--5-2 {
     bottom: 22rem;
-    right: 30%;
+    right: 30rem;
     z-index: -1;
   }
 }
@@ -73,24 +73,40 @@
 }
 
 .circle {
-  bottom: -20rem;
   border-radius: 50%;
-  height: 65rem;
-  left: -8rem;
-  opacity: 0.5;
   position: absolute;
-  width: 65rem;
+  z-index: -1;
+
+  &--header {
+    bottom: 4rem;
+    height: 45rem;
+    right: -5rem;
+    opacity: 0.2;
+    width: 45rem;
+  }
+
+  &--section-4 {
+    bottom: -20rem;
+    height: 65rem;
+    left: -8rem;
+    opacity: 0.5;
+    width: 65rem;
+  }
 
   &--yellow {
-    background-color: $circle-sun;
+    background-color: $circle-yellow;
+  }
+
+  &--orange {
+    background-color: $circle-orange;
   }
 }
 
 .border-dotted {
-  border-bottom: dotted $secondary-text-color;
-  margin-left: 10rem;
-  padding-top: 13rem;
-  width: 100%;
+  border-top: dotted $secondary-text-color;
+  max-width: 95%;
+  padding-bottom: 9rem;
+  width: calc(134rem + 28rem);
 }
 
 /* SVG animation */
@@ -105,12 +121,13 @@ svg {
   animation-delay:0.25s;
 }
 @keyframes boatmove{
-  0% {transform: rotate(2deg)translate(5px, 35px)}
-  25% {transform:rotate(-1deg) translate(0px, 60px)  }
-  50% {transform:rotate(3deg) translate(-15px, 35px) }
-  75% {transform:rotate(-1deg) translate(0px, 45px)}
-  100%{transform:rotate(2deg) translate(5px, 35px)}
+  0% { transform: rotate(2deg) translate(5px, 75px); -webkit-transform: rotate(2deg) translate(5px, 75px); -moz-transform: rotate(2deg) translate(5px, 75px); -ms-transform: rotate(2deg) translate(5px, 75px); -o-transform: rotate(2deg) translate(5px, 75px); }
+  25% { transform: rotate(-1deg) translate(0px, 95px); -webkit-transform: rotate(-1deg) translate(0px, 95px); -moz-transform: rotate(-1deg) translate(0px, 95px); -ms-transform: rotate(-1deg) translate(0px, 95px); -o-transform: rotate(-1deg) translate(0px, 95px); }
+  50% { transform: rotate(3deg) translate(0px, 85px); -webkit-transform: rotate(3deg) translate(0px, 85px); -moz-transform: rotate(3deg) translate(0px, 85px); -ms-transform: rotate(3deg) translate(0px, 85px); -o-transform: rotate(3deg) translate(0px, 85px); }
+  75% { transform: rotate(-1deg) translate(0px, 90px); -webkit-transform: rotate(-1deg) translate(0px, 90px); -moz-transform: rotate(-1deg) translate(0px, 90px); -ms-transform: rotate(-1deg) translate(0px, 90px); -o-transform: rotate(-1deg) translate(0px, 90px); }
+  100%{ transform: rotate(2deg) translate(5px, 75px); -webkit-transform: rotate(2deg) translate(5px, 75px); -moz-transform: rotate(2deg) translate(5px, 75px); -ms-transform: rotate(2deg) translate(5px, 75px); -o-transform: rotate(2deg) translate(5px, 75px); }
 }
+
 
 
 
@@ -121,18 +138,18 @@ svg {
 
 .header {
   overflow: hidden;
+  position: relative;
 
   &--alt {
     
   }
 
   &__content {
-    padding-bottom: 4.5rem;
+    padding-bottom: 12rem;
     padding-top: 3.5rem;
   }
 
   &__title {
-    margin-bottom: 10rem;
     padding: 8rem 10rem 8rem 0;
     position: relative;
 
@@ -205,6 +222,7 @@ svg {
 }
 
 .breadcrumbs {
+  font-family: museo-slab, serif;
   font-size: 1.5rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -215,6 +233,7 @@ svg {
     display: inline;
     font-size: 1.5rem;
     letter-spacing: 0.15rem;
+    line-height: 2rem;
     margin-right: 1rem;
   }
 
@@ -224,6 +243,7 @@ svg {
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.15rem;
+    line-height: 2rem;
     margin-left: 1rem;
   }
 }
@@ -262,7 +282,7 @@ svg {
   &--light-blue {
     &::before {
       background-color: $secondary-bg-blue;
-      height: 75%;
+      height: 80%;
     }
   }
 
@@ -276,7 +296,7 @@ svg {
   }
 
   &__bottom {
-    bottom: 24%;
+    bottom: 19%;
     left: 0;
     position: absolute;
     right: 0;
@@ -291,7 +311,7 @@ svg {
   &--pad-b {
     & > div {
       &:first-child {
-        padding-bottom: 15rem;
+        padding-bottom: 10rem;
       }
     }
   }
@@ -315,6 +335,22 @@ svg {
       .unordered-list__item {
         &::before {
           background-color: $alt-text-color;
+        }
+      }
+    }
+
+    &.section--pad-b {
+      & > div {
+        &:first-child {
+          padding-bottom: 10rem;
+        }
+      }
+    }
+
+    &.section--pad-t {
+      & > div {
+        &:first-child {
+          padding-top: 24rem;
         }
       }
     }
@@ -346,6 +382,10 @@ svg {
 
     .image-behind {
       padding-bottom: 5rem;
+
+      figure {
+        display: none;
+      }
     }
 
     .text-over-image {
@@ -358,7 +398,21 @@ svg {
     }
   } // End: --4
 
+  &--5 {
+    h2 {
+      color: $secondary-text-color;
+    }
+  }
+
   &--6 {
+    &.section--pad-t {
+      & > div {
+        &:first-child {
+          padding-top: 24rem;
+        }
+      }
+    }
+
     .section__paragraph {
       color: $alt-text-color;
       margin-left: 36rem;
@@ -394,7 +448,7 @@ svg {
 
   &__single {
     margin-bottom: 7rem;
-    padding: 10rem 15rem 7rem 0;
+    padding: 10rem 15rem 10rem 0;
     position: relative;
 
     &::before {
@@ -406,6 +460,10 @@ svg {
       top: 0;
       width: calc(100% - 36rem);
     }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &__description {
@@ -416,7 +474,8 @@ svg {
 
     h3 {
       color: $text-color;
-      font-size: 3.2rem;
+      font-size: 3rem;
+      line-height: 1.5;
       margin-bottom: 3rem;
     }
 
@@ -449,6 +508,8 @@ svg {
   color: $secondary-text-color;
   font-family: museo-slab, serif;
   font-weight: 500;
+  padding-bottom: 6rem;
+  padding-top: 3rem;
   text-align: center;
 }
 
@@ -461,17 +522,28 @@ svg {
 =============================================*/
 
 .law {
-  margin-bottom: 6rem;
+  p {
+    margin-bottom: 4rem;
+  }
+
+  &__description {
+    font-weight: 500;
+    margin-bottom: 7rem;
+  }
 
   &__title {
     color: $other-text-color;
     font-size: 1.6rem;
+    letter-spacing: 0.02em;
+  }
+
+  &__rule {
+    margin-bottom: 6rem;
   }
 
   &__content {
     p {
       font-size: 1.6rem;
-      margin-bottom: 3rem;
     }
 
     .unordered-list {
@@ -551,7 +623,8 @@ svg {
     a {
       color: $alt-text-color;
       display: block;
-      font-size: 3.2rem;
+      font-family: museo-slab, serif;
+      font-size: 3rem;
       letter-spacing: 0.1rem;
       line-height: 1.4;
       margin-bottom: 1rem;
@@ -587,8 +660,14 @@ svg {
 
       a {
         color: $text-color;
+        font-family: museo-slab, serif;
         font-size: 1.5rem;
         text-transform: uppercase;
+
+        &:hover {
+          color: darken($text-color, 20%);
+          text-decoration: none;
+        }
       }
     }
   }

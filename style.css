@@ -7,7 +7,7 @@ Description: SASS-based Responsive wordpress starter theme
 Version: 1.0
 */
 /*=============================================
-=            SETOF Colors                  =
+=            Colors                  =
 =============================================*/
 /* Background */
 /* Font */
@@ -27,6 +27,7 @@ html {
 body {
   color: #277191;
   font-family: museo-sans, sans-serif;
+  font-weight: 500;
   margin: 0;
   display: -webkit-box;
   display: flex;
@@ -58,16 +59,18 @@ h3 {
   margin: 0; }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 3rem;
   letter-spacing: 0.1rem;
+  line-height: 1.5;
   margin-bottom: 4rem; }
   h1:last-of-type {
     margin-bottom: 0; }
 
 h2 {
-  color: #71B3CB;
-  font-size: 3.2rem;
+  color: #277191;
+  font-size: 3rem;
   letter-spacing: 0.1rem;
+  line-height: 1.5;
   margin-bottom: 4rem; }
   h2 i {
     font-style: italic;
@@ -80,7 +83,8 @@ figure {
 
 a {
   color: #277191;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: 0.3s; }
   a:hover {
     text-decoration: underline; }
 
@@ -140,6 +144,12 @@ ol {
 @media screen and (max-width: 1366px) {
   html {
     font-size: 9px; } }
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.6rem; }
+
+  h2 {
+    font-size: 2.6rem; } }
 /* #####
     Grid
 ##### */
@@ -310,7 +320,7 @@ ol {
   -o-flex-wrap: wrap;
   flex-wrap: wrap; }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1024px) {
   .d-fdc-l {
     flex-direction: column; }
 
@@ -398,7 +408,7 @@ ol {
     top: 0; }
   .waves--5-2 {
     bottom: 22rem;
-    right: 30%;
+    right: 30rem;
     z-index: -1; }
 
 .waves-clouds {
@@ -407,21 +417,31 @@ ol {
     right: 0; }
 
 .circle {
-  bottom: -20rem;
   border-radius: 50%;
-  height: 65rem;
-  left: -8rem;
-  opacity: 0.5;
   position: absolute;
-  width: 65rem; }
+  z-index: -1; }
+  .circle--header {
+    bottom: 4rem;
+    height: 45rem;
+    right: -5rem;
+    opacity: 0.2;
+    width: 45rem; }
+  .circle--section-4 {
+    bottom: -20rem;
+    height: 65rem;
+    left: -8rem;
+    opacity: 0.5;
+    width: 65rem; }
   .circle--yellow {
     background-color: #FCFCA6; }
+  .circle--orange {
+    background-color: #FCC8A6; }
 
 .border-dotted {
-  border-bottom: dotted #71B3CB;
-  margin-left: 10rem;
-  padding-top: 13rem;
-  width: 100%; }
+  border-top: dotted #71B3CB;
+  max-width: 95%;
+  padding-bottom: 9rem;
+  width: calc(134rem + 28rem); }
 
 /* SVG animation */
 svg {
@@ -436,25 +456,45 @@ svg {
 
 @keyframes boatmove {
   0% {
-    transform: rotate(2deg) translate(5px, 35px); }
+    transform: rotate(2deg) translate(5px, 75px);
+    -webkit-transform: rotate(2deg) translate(5px, 75px);
+    -moz-transform: rotate(2deg) translate(5px, 75px);
+    -ms-transform: rotate(2deg) translate(5px, 75px);
+    -o-transform: rotate(2deg) translate(5px, 75px); }
   25% {
-    transform: rotate(-1deg) translate(0px, 60px); }
+    transform: rotate(-1deg) translate(0px, 95px);
+    -webkit-transform: rotate(-1deg) translate(0px, 95px);
+    -moz-transform: rotate(-1deg) translate(0px, 95px);
+    -ms-transform: rotate(-1deg) translate(0px, 95px);
+    -o-transform: rotate(-1deg) translate(0px, 95px); }
   50% {
-    transform: rotate(3deg) translate(-15px, 35px); }
+    transform: rotate(3deg) translate(0px, 85px);
+    -webkit-transform: rotate(3deg) translate(0px, 85px);
+    -moz-transform: rotate(3deg) translate(0px, 85px);
+    -ms-transform: rotate(3deg) translate(0px, 85px);
+    -o-transform: rotate(3deg) translate(0px, 85px); }
   75% {
-    transform: rotate(-1deg) translate(0px, 45px); }
+    transform: rotate(-1deg) translate(0px, 90px);
+    -webkit-transform: rotate(-1deg) translate(0px, 90px);
+    -moz-transform: rotate(-1deg) translate(0px, 90px);
+    -ms-transform: rotate(-1deg) translate(0px, 90px);
+    -o-transform: rotate(-1deg) translate(0px, 90px); }
   100% {
-    transform: rotate(2deg) translate(5px, 35px); } }
+    transform: rotate(2deg) translate(5px, 75px);
+    -webkit-transform: rotate(2deg) translate(5px, 75px);
+    -moz-transform: rotate(2deg) translate(5px, 75px);
+    -ms-transform: rotate(2deg) translate(5px, 75px);
+    -o-transform: rotate(2deg) translate(5px, 75px); } }
 /*=============================================
 =           1. Header                    =
 =============================================*/
 .header {
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   .header__content {
-    padding-bottom: 4.5rem;
+    padding-bottom: 12rem;
     padding-top: 3.5rem; }
   .header__title {
-    margin-bottom: 10rem;
     padding: 8rem 10rem 8rem 0;
     position: relative; }
     .header__title::before {
@@ -508,6 +548,7 @@ svg {
       display: inline-block; }
 
 .breadcrumbs {
+  font-family: museo-slab, serif;
   font-size: 1.5rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -517,6 +558,7 @@ svg {
     display: inline;
     font-size: 1.5rem;
     letter-spacing: 0.15rem;
+    line-height: 2rem;
     margin-right: 1rem; }
   .breadcrumbs p {
     color: #B5E4FA;
@@ -524,6 +566,7 @@ svg {
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.15rem;
+    line-height: 2rem;
     margin-left: 1rem; }
 
 /*=============================================
@@ -546,7 +589,7 @@ svg {
     height: 100%; }
   .background-waves--light-blue::before {
     background-color: #71B3CB;
-    height: 75%; }
+    height: 80%; }
   .background-waves__top {
     left: 0;
     position: absolute;
@@ -555,7 +598,7 @@ svg {
     width: 100%;
     z-index: -1; }
   .background-waves__bottom {
-    bottom: 24%;
+    bottom: 19%;
     left: 0;
     position: absolute;
     right: 0;
@@ -565,7 +608,7 @@ svg {
 .section {
   position: relative; }
   .section--pad-b > div:first-child {
-    padding-bottom: 15rem; }
+    padding-bottom: 10rem; }
   .section--pad-t > div:first-child {
     padding-top: 13rem; }
   .section--2 p {
@@ -574,6 +617,10 @@ svg {
     color: #FFFFFF; }
     .section--2 .unordered-list .unordered-list__item::before {
       background-color: #FFFFFF; }
+  .section--2.section--pad-b > div:first-child {
+    padding-bottom: 10rem; }
+  .section--2.section--pad-t > div:first-child {
+    padding-top: 24rem; }
   .section--3 figure {
     margin-right: 4rem; }
     .section--3 figure:last-child {
@@ -587,6 +634,8 @@ svg {
       width: 100%; }
   .section--4 .image-behind {
     padding-bottom: 5rem; }
+    .section--4 .image-behind figure {
+      display: none; }
   .section--4 .text-over-image {
     background-color: rgba(255, 255, 255, 0.75);
     display: inline-block;
@@ -594,6 +643,10 @@ svg {
     margin-top: 11rem;
     padding-left: 2rem;
     padding-top: 1rem; }
+  .section--5 h2 {
+    color: #71B3CB; }
+  .section--6.section--pad-t > div:first-child {
+    padding-top: 24rem; }
   .section--6 .section__paragraph {
     color: #FFFFFF;
     margin-left: 36rem; }
@@ -610,7 +663,7 @@ svg {
   margin-top: 10rem; }
   .room__single {
     margin-bottom: 7rem;
-    padding: 10rem 15rem 7rem 0;
+    padding: 10rem 15rem 10rem 0;
     position: relative; }
     .room__single::before {
       background-color: #71B3CB;
@@ -620,6 +673,8 @@ svg {
       right: 0;
       top: 0;
       width: calc(100% - 36rem); }
+    .room__single:last-of-type {
+      margin-bottom: 0; }
   .room__description {
     background-color: #B5E4FA;
     max-width: 54rem;
@@ -627,7 +682,8 @@ svg {
     z-index: 1; }
     .room__description h3 {
       color: #277191;
-      font-size: 3.2rem;
+      font-size: 3rem;
+      line-height: 1.5;
       margin-bottom: 3rem; }
     .room__description p {
       color: #71B3CB;
@@ -651,27 +707,34 @@ svg {
   color: #71B3CB;
   font-family: museo-slab, serif;
   font-weight: 500;
+  padding-bottom: 6rem;
+  padding-top: 3rem;
   text-align: center; }
 
 /*=============================================
 =           3. Alt Pages                    =
 =============================================*/
-.law {
+.law p {
+  margin-bottom: 4rem; }
+.law__description {
+  font-weight: 500;
+  margin-bottom: 7rem; }
+.law__title {
+  color: #FCC8A6;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em; }
+.law__rule {
   margin-bottom: 6rem; }
-  .law__title {
-    color: #FCC8A6;
-    font-size: 1.6rem; }
-  .law__content p {
+.law__content p {
+  font-size: 1.6rem; }
+.law__content .unordered-list {
+  margin-bottom: 3rem;
+  padding-left: 3rem; }
+  .law__content .unordered-list .unordered-list__item {
     font-size: 1.6rem;
-    margin-bottom: 3rem; }
-  .law__content .unordered-list {
-    margin-bottom: 3rem;
-    padding-left: 3rem; }
-    .law__content .unordered-list .unordered-list__item {
-      font-size: 1.6rem;
-      margin-bottom: 0; }
-  .law .information-details {
-    margin-top: 15rem; }
+    margin-bottom: 0; }
+.law .information-details {
+  margin-top: 15rem; }
 
 /*=============================================
 =           4. 404 page                    =
@@ -710,7 +773,8 @@ svg {
   .footer__contact-info a {
     color: #FFFFFF;
     display: block;
-    font-size: 3.2rem;
+    font-family: museo-slab, serif;
+    font-size: 3rem;
     letter-spacing: 0.1rem;
     line-height: 1.4;
     margin-bottom: 1rem; }
@@ -733,8 +797,12 @@ svg {
       margin-right: 0; }
     .footer__menu-list li a {
       color: #277191;
+      font-family: museo-slab, serif;
       font-size: 1.5rem;
       text-transform: uppercase; }
+      .footer__menu-list li a:hover {
+        color: #113241;
+        text-decoration: none; }
 
 /*=============================================
 =            Section top header             =
@@ -764,13 +832,7 @@ svg {
 0. General
 1. Header
 2. Page Home
-  2.1 Section 1
-  2.2 Section 2
-  2.3 Section 3
-  2.4 Section 4
-  2.5 Section 5
-  2.6 Section 6
-  2.7 Section 7
+  2.1 Section 6
 3. Alt Pages
 4. Footer
 
@@ -788,21 +850,19 @@ svg {
 
   .waves--5 {
     display: none; }
-  .waves--5-2 {
-    right: 40rem; }
 
   .waves-clouds--2 {
     right: 2rem; } }
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1160px) {
+  .waves--5-2 {
+    display: none; } }
+@media screen and (max-width: 1024px) {
   .pad-l-10 {
     padding-left: 7rem; }
 
-  .waves--5-2 {
-    display: none; }
-
-  .border-dotted {
-    margin-left: 7rem;
-    padding-top: 8rem; } }
+  .grid-1340 {
+    padding-left: 4rem;
+    padding-right: 4rem; } }
 @media screen and (max-width: 768px) {
   .section--pad-t > div:first-child {
     padding-top: 8rem; }
@@ -814,17 +874,29 @@ svg {
     display: none; }
 
   .waves-clouds--2 {
-    display: none; } }
+    display: none; }
+
+  .circle--header {
+    bottom: 12rem;
+    height: 30rem;
+    width: 30rem; }
+  .circle--section-4 {
+    bottom: -12rem;
+    height: 35rem;
+    width: 35rem; } }
 @media screen and (max-width: 600px) {
   .waves--header {
     display: none; }
 
   .pad-l-10 {
+    padding-left: 0; }
+
+  .grid-1340 {
     padding-left: 4rem; } }
 /* =============================================
 =           1. Header                    =
 ============================================= */
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1024px) {
   .logo--footer {
     bottom: 10.5rem; }
 
@@ -835,17 +907,23 @@ svg {
   .header__image .header__image-caption {
     left: 7rem; } }
 @media screen and (max-width: 768px) {
+  .logo--footer {
+    bottom: 15rem; }
+    .logo--footer a {
+      padding: 0 2rem 1rem; }
+
   .header__heading {
     font-size: 2.6rem;
     min-width: 90%;
     max-width: 100%;
     padding-left: 2rem;
-    z-index: 1; } }
-@media screen and (max-width: 600px) {
+    z-index: 1; }
   .header__image .header__image-caption {
-    font-size: 5rem;
-    left: 4rem;
-    top: 2rem; } }
+    font-size: 4rem;
+    position: static; } }
+@media screen and (max-width: 600px) {
+  .header__content {
+    padding-bottom: 5rem; } }
 /*=============================================
 =           2. Page Home                    =
 =============================================*/
@@ -863,7 +941,7 @@ svg {
       width: 100%; }
   .section--1 .grid-35 {
     width: 100%; }
-  .section--2 .grid-60 {
+  .section--2 .grid-70 {
     width: 100%; }
   .section--2.section--pad-t > div:first-child {
     padding-top: 16rem; }
@@ -875,15 +953,24 @@ svg {
     .section--3 figure.grid-20 {
       margin: 0 auto;
       width: 70%; }
+  .section--4 .image-behind {
+    background: none !important; }
+    .section--4 .image-behind figure {
+      display: block; }
+  .section--4 .text-over-image {
+    background-color: transparent;
+    margin-left: 0;
+    margin-top: 2rem;
+    padding: 3rem 0; }
   .section--5 .grid-60 {
     margin-bottom: 4rem;
     width: 100%; }
   .section--5 .grid-35 {
-    width: 50%; } }
+    width: 80%; } }
 /*=============================================
-=           2.6 Section 6                    =
+=           2.1 Section 6                    =
 =============================================*/
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1024px) {
   .room__single {
     padding: 0 7rem 7rem; }
     .room__single::before {
@@ -893,12 +980,14 @@ svg {
       width: 100%; }
   .room__description {
     margin-bottom: 7rem;
-    padding: 10rem 7rem; }
+    padding: 9rem 5rem; }
   .room__design {
     margin-left: 0; } }
 @media screen and (max-width: 768px) {
   .section--6 .section__paragraph {
-    margin-left: 26rem; } }
+    margin-left: 26rem; }
+  .section--6 .section--pad-t > div:first-child {
+    padding-top: 20rem; } }
 @media screen and (max-width: 600px) {
   .section--6 .section__paragraph {
     margin-left: 0; }
@@ -911,6 +1000,8 @@ svg {
   .room__description {
     margin-bottom: 6rem;
     padding: 6rem 4rem; }
+    .room__description h3 {
+      font-size: 2.6rem; }
   .room__size {
     bottom: -1.4rem;
     font-size: 8rem;
@@ -919,9 +1010,18 @@ svg {
 =           3. Alt Pages                    =
 =============================================*/
 /*=============================================
-=           3. Footer                    =
+=           4. 404 page                    =
 =============================================*/
-@media screen and (max-width: 990px) {
+.page-404 {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 95%;
+  text-align: center; }
+
+/*=============================================
+=           5. Footer                    =
+=============================================*/
+@media screen and (max-width: 1024px) {
   .footer {
     padding-top: 5rem; }
     .footer__top {
@@ -932,10 +1032,15 @@ svg {
   .footer__top {
     padding-bottom: 9rem; }
     .footer__top .footer__contact-info {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
       text-align: center; }
+      .footer__top .footer__contact-info a {
+        font-size: 2.4rem; }
     .footer__top .footer__address-info {
+      margin-bottom: 4rem;
       text-align: center; }
+      .footer__top .footer__address-info p {
+        font-size: 2.2rem; }
   .footer__bottom {
     padding-bottom: 3rem;
     text-align: center; }
@@ -943,7 +1048,11 @@ svg {
       margin-bottom: 1rem; }
       .footer__bottom .footer__menu .footer__menu-list {
         padding: 0; }
-        .footer__bottom .footer__menu .footer__menu-list .footer__menu-item a {
-          padding: 1rem; } }
+        .footer__bottom .footer__menu .footer__menu-list li {
+          display: block;
+          margin-right: 0; }
+          .footer__bottom .footer__menu .footer__menu-list li a {
+            display: block;
+            padding: 1rem; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -8,6 +8,8 @@ $waves 		= get_field('waves', 'option');
 
 $footerQuestion = get_field('question_phrase', 'option');
 
+global $post;
+$slug = $post->post_name;
 ?>
 
 	<main class="page-content">
@@ -16,9 +18,9 @@ $footerQuestion = get_field('question_phrase', 'option');
 			while ( have_posts() ) :
 				the_post(); ?>
 
-				<div class="law grid-1340 pad-l-10">
+				<div class="law <?php echo $slug; ?> pad-l-10 grid-1340">
 
-					<?php the_content(); ?>
+					<div class="law__description"><?php the_content(); ?></div>
 
 					<?php if( have_rows('rules') ):
 						while ( have_rows('rules') ) :

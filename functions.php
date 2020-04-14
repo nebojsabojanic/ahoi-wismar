@@ -49,7 +49,7 @@ function the_breadcrumb() {
         echo '<a href="';
         echo get_option('home');
         echo '">';
-        bloginfo('name');
+        echo 'Startseite';
         echo '</a>' . $sep . '<p>';
 	
 	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.

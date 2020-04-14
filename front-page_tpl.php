@@ -16,7 +16,7 @@ $footerQuestion = get_field('question_phrase', 'option');
 	<main class="page-content">
 
 
-		<section class="section section--1 section--pad-b">
+		<section class="section section--1">
 
 			<div class="grid-1340 d-flex d-jcsb d-aic d-wrap d-fdc-t">
 
@@ -94,7 +94,7 @@ $footerQuestion = get_field('question_phrase', 'option');
 						while ( have_rows('section_2') ) :
 						the_row(); ?>
 
-						<div class="section__paragraph grid-60 pad-l-10">
+						<div class="section__paragraph grid-70 pad-l-10">
 							<h2 class="white-text"><?php echo $section2['title']; ?></h2>
 							<?php echo $section2['paragraph']; ?>
 
@@ -158,7 +158,9 @@ $footerQuestion = get_field('question_phrase', 'option');
 
 		<section class="section section--4">
 
-			<div class="circle circle--yellow"></div>
+			<div class="border-dotted"></div>
+
+			<div class="circle circle--section-4 circle--yellow"></div>
 
 			<?php
 			$section4 = get_field('section_4');
@@ -168,9 +170,9 @@ $footerQuestion = get_field('question_phrase', 'option');
 				
 				<div class="image-behind grid-1340 mb-16r" style="background: url('<?php echo $section4['background_image']['url']; ?>'); background-size: 96% 100%; background-repeat: no-repeat; background-position: 50%;">
 
-					<!-- <figure>
+					<figure>
 						<img src="<?php echo esc_url( $section4['background_image']['url'] ); ?>" alt="<?php echo esc_attr( $section4['background_image']['alt'] ); ?>" />
-					</figure> -->
+					</figure>
 
 					<div class="text-over-image pad-l-10">
 						<h2><?php echo $section4['title']; ?></h2>
@@ -227,14 +229,14 @@ $footerQuestion = get_field('question_phrase', 'option');
 
 					<?php endwhile; // End: section_5 loop
 				endif; ?>
+
+				<figure class="waves waves--5-2">
+					<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
+				</figure>
 			
 			</div><!-- End: grid-1340 -->
 
 			<figure class="waves waves--5">
-				<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
-			</figure>
-
-			<figure class="waves waves--5-2">
 				<img src="<?php echo $waves['url']; ?>" alt="<?php echo $waves['alt']; ?>">
 			</figure>
 
@@ -292,8 +294,6 @@ $footerQuestion = get_field('question_phrase', 'option');
 								<?php endwhile; // End: rooms loop
 							endif; ?>
 
-							<p class="information-details"><?php echo $footerQuestion; ?></p>
-
 						</div><!-- End: room -->
 
 						<figure class="graphics graphics--seagull">
@@ -306,6 +306,8 @@ $footerQuestion = get_field('question_phrase', 'option');
 				</div><!-- End: grid-1340 -->
 
 			</section><!-- End: section--6 -->
+
+			<p class="information-details"><?php echo $footerQuestion; ?></p>
 
 		</div><!-- End: background-waves -->
 

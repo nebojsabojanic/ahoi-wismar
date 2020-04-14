@@ -4,13 +4,7 @@
 0. General
 1. Header
 2. Page Home
-  2.1 Section 1
-  2.2 Section 2
-  2.3 Section 3
-  2.4 Section 4
-  2.5 Section 5
-  2.6 Section 6
-  2.7 Section 7
+  2.1 Section 6
 3. Alt Pages
 4. Footer
 
@@ -30,17 +24,13 @@
 
     .graphics {
         &--seagull {
-          left: 2rem;
+            left: 2rem;
         }
-      }
+    }
 
     .waves {
         &--5 {
             display: none;
-        }
-
-        &--5-2 {
-            right: 40rem;
         }
     }
 
@@ -51,20 +41,22 @@
     }
 } // End: desktop
 
-@include laptop {
-    .pad-l-10 {
-        padding-left: 7rem;
-    }
-
+@include mediumDesktop {
     .waves {
         &--5-2 {
             display: none;
         }
     }
+} // End: mediumDesktop
 
-    .border-dotted {
-        margin-left: 7rem;
-        padding-top: 8rem;
+@include laptop {
+    .pad-l-10 {
+        padding-left: 7rem;
+    }
+    
+    .grid-1340 {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 } // End: laptop
 
@@ -100,6 +92,20 @@
             display: none;
         }
     }
+
+    .circle {
+        &--header {
+            bottom: 12rem;
+            height: 30rem;
+            width: 30rem;
+        }
+
+        &--section-4 {
+            bottom: -12rem;
+            height: 35rem;
+            width: 35rem;
+        }
+    }
 } // End: tablet
 
 @include mobile {
@@ -110,6 +116,10 @@
     }
 
     .pad-l-10 {
+        padding-left: 0;
+    }
+
+    .grid-1340 {
         padding-left: 4rem;
     }
 } // End: mobile
@@ -147,6 +157,16 @@
 } // End: laptop
 
 @include tablet {
+    .logo {
+        &--footer {
+            bottom: 15rem;
+
+            a {
+                padding: 0 2rem 1rem;
+            }
+        }
+    }
+
     .header {
         &__heading {
             font-size: 2.6rem;
@@ -155,17 +175,20 @@
             padding-left: 2rem;
             z-index: 1;
         }
+
+        &__image {
+            .header__image-caption {
+                font-size: 4rem;
+                position: static;
+            }
+        }
     }
 } // End: tablet
 
 @include mobile {
     .header {
-        &__image {
-            .header__image-caption {
-                font-size: 5rem;
-                left: 4rem;
-                top: 2rem;
-            }
+        &__content {
+            padding-bottom: 5rem;
         }
     }
 } // End: mobile
@@ -211,7 +234,7 @@
         }
 
         &--2 {
-            .grid-60 {
+            .grid-70 {
                 width: 100%;
             }
 
@@ -240,6 +263,23 @@
             }
         } // End: --3
 
+        &--4 {
+            .image-behind {
+                background: none !important;
+
+                figure {
+                    display: block;
+                }
+            }
+
+            .text-over-image {
+                background-color: transparent;
+                margin-left: 0;
+                margin-top: 2rem;
+                padding: 3rem 0;
+            }
+        }
+
         &--5 {
             .grid-60 {
                 margin-bottom: 4rem;
@@ -247,7 +287,7 @@
             }
 
             .grid-35 {
-                width: 50%;
+                width: 80%;
             }
         }
     }
@@ -257,7 +297,7 @@
 
 
 /*=============================================
-=           2.6 Section 6                    =
+=           2.1 Section 6                    =
 =============================================*/
 
 @include laptop {
@@ -275,7 +315,7 @@
 
         &__description {
             margin-bottom: 7rem;
-            padding: 10rem 7rem;
+            padding: 9rem 5rem;
         }
 
         &__design {
@@ -289,6 +329,14 @@
         &--6 {
             .section__paragraph {
                 margin-left: 26rem;
+            }
+
+            .section--pad-t {
+                & > div {
+                    &:first-child {
+                        padding-top: 20rem;
+                    }
+                }
             }
         }
     }
@@ -317,6 +365,10 @@
         &__description {
             margin-bottom: 6rem;
             padding: 6rem 4rem;
+
+            h3 {
+                font-size: 2.6rem;
+            }
         }
 
         &__size {
@@ -346,7 +398,22 @@
 
 
 /*=============================================
-=           3. Footer                    =
+=           4. 404 page                    =
+=============================================*/
+
+.page-404 {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 95%;
+    text-align: center;
+}
+
+
+
+
+
+/*=============================================
+=           5. Footer                    =
 =============================================*/
 
 @include laptop {
@@ -369,12 +436,21 @@
             padding-bottom: 9rem;
 
             .footer__contact-info {
-                margin-bottom: 2rem;
+                margin-bottom: 4rem;
                 text-align: center;
+
+                a {
+                    font-size: 2.4rem;
+                }
             }
 
             .footer__address-info {
+                margin-bottom: 4rem;
                 text-align: center;
+
+                p {
+                    font-size: 2.2rem;
+                }
             }
         }
 
@@ -391,8 +467,12 @@
                 .footer__menu-list {
                     padding: 0;
 
-                    .footer__menu-item {
+                    li {
+                        display: block;
+                        margin-right: 0;
+
                         a {
+                            display: block;
                             padding: 1rem;
                         }
                     }

@@ -2,13 +2,9 @@
  **********************************************
  * Project: Theme Name Republic Serbia
  **********************************************
- * Developed by: Mediavuk
-   + web: mediavuk.com
-   + e-mail: <info@mediavuk.com>
-   + html, css, jquery, vanilla & php
-   + responsive page
- *********************************************
--->
+ * Developed by: Mediavuk  + web: mediavuk.com
+ + e-mail: <info@mediavuk.com>  + html, css, jquery, vanilla & php  + responsive page
+ ********************************************* -->
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -114,6 +110,14 @@
 			<?php } ?>
 
 		</div><!-- End: header__content -->
+
+
+		<?php if(is_front_page() || is_page('startseite')){ ?>
+
+			<div class="circle circle--header circle--orange"></div>
+
+		<?php } ?>
+
 
 	</header>
 	
