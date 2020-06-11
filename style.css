@@ -80,6 +80,8 @@ figure {
   margin: 0; }
   figure img {
     max-width: 100%; }
+  figure figcaption {
+    font-size: 18px; }
 
 a {
   color: #277191;
@@ -170,6 +172,7 @@ ol {
 .grid-65,
 .grid-66,
 .grid-70,
+.grid-72,
 .grid-75,
 .grid-80,
 .grid-85,
@@ -234,6 +237,9 @@ ol {
 
 .grid-70 {
   width: 70%; }
+
+.grid-72 {
+  width: 72%; }
 
 .grid-75 {
   width: 75%; }
@@ -520,6 +526,7 @@ svg {
       width: 100%; }
     .header__image .header__image-caption {
       background-color: rgba(255, 255, 255, 0.75);
+      bottom: 10rem;
       color: #1D5F7A;
       font-family: museo-slab, serif;
       font-size: 6rem;
@@ -528,7 +535,6 @@ svg {
       line-height: 1.2;
       padding: 1.7rem 3.4rem;
       position: absolute;
-      top: 8.3rem;
       text-transform: uppercase; }
 
 .logo {
@@ -629,6 +635,8 @@ svg {
     .section--3 figure img {
       border: 15px solid #FFFFFF;
       max-width: 100%; }
+    .section--3 figure figcaption {
+      padding-left: 15px; }
   .section--4 figure {
     width: 100%; }
     .section--4 figure img {
@@ -643,6 +651,7 @@ svg {
     margin-left: 8rem;
     margin-top: 11rem;
     padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 1rem; }
   .section--5 h2 {
     color: #71B3CB; }

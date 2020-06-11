@@ -94,7 +94,7 @@ $footerQuestion = get_field('question_phrase', 'option');
 						while ( have_rows('section_2') ) :
 						the_row(); ?>
 
-						<div class="section__paragraph grid-70 pad-l-10">
+						<div class="section__paragraph grid-72 pad-l-10">
 							<h2 class="white-text"><?php echo $section2['title']; ?></h2>
 							<?php echo $section2['paragraph']; ?>
 
@@ -132,14 +132,17 @@ $footerQuestion = get_field('question_phrase', 'option');
 					<div class="grid-1340 d-flex d-jcsb d-fdc-t">
 						<figure class="grid-38">
 							<img src="<?php echo esc_url( $section3['image_1']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_1']['alt'] ); ?>" />
+							<figcaption><?php echo $section3['image_1_caption']; ?></figcaption>
 						</figure>
 
 						<figure class="grid-38">
 							<img src="<?php echo esc_url( $section3['image_2']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_2']['alt'] ); ?>" />
+							<figcaption><?php echo $section3['image_2_caption']; ?></figcaption>
 						</figure>
 
 						<figure class="grid-20">
 							<img src="<?php echo esc_url( $section3['image_3']['url'] ); ?>" alt="<?php echo esc_attr( $section3['image_3']['alt'] ); ?>" />
+							<figcaption><?php echo $section3['image_3_caption']; ?></figcaption>
 						</figure>
 					</div><!-- End: grid-1340 -->
 				<?php endif; ?>
@@ -225,6 +228,7 @@ $footerQuestion = get_field('question_phrase', 'option');
 
 					<figure class="grid-35">
 						<img src="<?php echo esc_url( $section5['image']['url'] ); ?>" alt="<?php echo esc_attr( $section5['image']['alt'] ); ?>" />
+						<figcaption><?php echo $section5['image_caption']; ?></figcaption>
 					</figure>
 
 					<?php endwhile; // End: section_5 loop

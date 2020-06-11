@@ -184,6 +184,7 @@ svg {
 
     .header__image-caption {
       background-color: rgba($color: $alt-text-color, $alpha: 0.75);
+      bottom: 10rem;
       color: #1D5F7A;
       font-family: museo-slab, serif;
       font-size: 6rem;
@@ -192,7 +193,6 @@ svg {
       line-height: 1.2;
       padding: 1.7rem 3.4rem;
       position: absolute;
-      top: 8.3rem;
       text-transform: uppercase;
     }
   }
@@ -369,6 +369,10 @@ svg {
         border: 15px solid $alt-text-color;
         max-width: 100%;
       }
+
+      figcaption {
+        padding-left: 15px;
+      }
     }
   } // End: --3
 
@@ -395,6 +399,7 @@ svg {
       margin-left: 8rem;
       margin-top: 11rem;
       padding-left: 2rem;
+      padding-right: 2rem;
       padding-top: 1rem;
     }
   } // End: --4

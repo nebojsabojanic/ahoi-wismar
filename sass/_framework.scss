@@ -84,6 +84,10 @@ figure {
     img {
       max-width: 100%;
     }
+
+    figcaption {
+        font-size: 18px;
+    }
 }
 
 a {
@@ -205,6 +209,7 @@ ol {
 .grid-65,
 .grid-66,
 .grid-70,
+.grid-72,
 .grid-75,
 .grid-80,
 .grid-85,
@@ -270,6 +275,9 @@ ol {
 
 .grid-70 {
     width: 70%; }
+
+.grid-72 {
+    width: 72%; }
 
 .grid-75 {
     width: 75%; }

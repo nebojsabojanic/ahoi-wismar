@@ -39,8 +39,6 @@ $slug = $post->post_name;
 						<?php endwhile; // End: rules loop
 					endif; ?>
 
-					<p class="information-details"><?php echo $footerQuestion; ?></p>
-
 				</div><!-- End: law -->
 
 			<?php endwhile;
